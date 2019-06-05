@@ -1,0 +1,23 @@
+{
+  "name": "my-budget-app",
+  "version": "1.0.0",
+  "description": "Budget manager",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codding-ideas/my-budget-app.git"
+  },
+  "author": "Emma & Gift",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codding-ideas/my-budget-app/issues"
+  },
+  "homepage": "https://github.com/codding-ideas/my-budget-app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  }
+}
