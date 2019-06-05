@@ -61,7 +61,7 @@ app.post('/expenses', (req, res) => {
 // @access public 
 app.get('/expenses', (req, res) => {
     res.send({
-        routeType: 'Get all expenses'
+        routeType: 'Get all expenses routes'
     })
 });
 
