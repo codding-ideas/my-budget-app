@@ -1,4 +1,5 @@
 const express = require('express');
+require('./config/db')
 
 const app = express();
 
@@ -11,61 +12,12 @@ app.get('/', (req, res) => {
     res.send({routType: 'Homepage'})
 })
 
-// @route POST /user
-// @desc register user
-// @access public 
-app.post('/users', (req, res) => {
-    res.send({routeType: 'Register user'})
-})
 
-// @route GET /USER
-// @desc get all users
-// @access public 
-app.get('/users', (req, res) => {
-    res.send({
-        routeType: 'List all users'
-    })
-});
-
-// @route POST /income
-// @desc add income
-// @access public 
-app.post('/income', (req, res) => {
-    res.send({
-        routeType: 'Create income'
-    })
-});
-
-// @route GET /income
-// @desc List all income
-// @access public 
-app.get('/income', (req, res) => {
-    res.send({
-        routeType: 'List all income'
-    })
-});
-
-
-// @route POST /expenses
-// @desc add expenses
-// @access public 
-app.post('/expenses', (req, res) => {
-    res.send({
-        routeType: 'Create expenses'
-    })
-});
-
-
-// @route GET /expenses
-// @desc get all expenses
-// @access public 
-app.get('/expenses', (req, res) => {
-    res.send({
-        routeType: 'Get all expenses routes'
-    })
-});
-
-
+//=====Defining Routes==============================
+app.use('/api/users', require('./routes/api/users'));
+app.use('/api/expenses', require('./routes/api/expenses'));
+app.use('/api/income', require('./routes/api/income'))
+//--------------------------------------------------
 
 //===SERVER PORT========================
 const PORT = process.env.PORT || 5000
