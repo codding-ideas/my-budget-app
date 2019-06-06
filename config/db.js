@@ -1,9 +1,18 @@
+const mongoose = require('mongoose');
+const config = require('config');
 
-const mongoose = require('mongoose')
+const connectDB = async () => {
+    try {
+        await mongoose.connect(db, {
+            useNewUrlParser: true,
+            useCreateIndex: true,
+            useFindAndModify: false
+        });
+        console.log('mongoDB Connected')
+    } catch (error) {
+        console.log(error.message)
+    }
+    //Exit process with failure
+}
 
-
- const dbConnect = mongoose.connect('mongodb://localhost:27017/myapp', {
-    useNewUrlParser: true
-});
-
-module.exports = dbConnect;
+module.exports = connectDB;
