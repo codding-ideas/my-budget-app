@@ -12,7 +12,11 @@ app.use(bodyParser.urlencoded({
     extended: false
 }))
 
+
 //ROUTES
+app.get('/', (req, res) => {
+    res.json({developers: "Emma & Gift"})
+})
 app.use('/api/users', require('./routes/api/users'))
 
 

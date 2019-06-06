@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Budget manager",
   "main": "index.js",
+  "engines": {
+    "node": "v10.15.1",
+    "npm": "6.9.0"
+  },
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js"
