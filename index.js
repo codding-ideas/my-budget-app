@@ -1,23 +1,20 @@
 const express = require('express');
-require('./config/db')
+const connectDb = require('./config/db');
+const bodyParser = require('body-parser');
 
 const app = express();
 
+//===MongoDb connection function
+connectDb()
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({
+    extended: false
+}))
+
 //ROUTES
+app.use('/api/users', require('./routes/api/users'))
 
-// @route GET /
-// @desc Home route
-// @access public
-app.get('/', (req, res) => {
-    res.send({routType: 'Homepage'})
-})
-
-
-//=====Defining Routes==============================
-app.use('/api/users', require('./routes/api/users'));
-app.use('/api/expenses', require('./routes/api/expenses'));
-app.use('/api/income', require('./routes/api/income'))
-//--------------------------------------------------
 
 //===SERVER PORT========================
 const PORT = process.env.PORT || 5000
