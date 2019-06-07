@@ -21,10 +21,13 @@ app.use(bodyParser.urlencoded({
     extended: false 
 }))
 
+// ... other app.use middleware 
+app.use(express.static(path.join(__dirname, "client", "build")))
+
 
 //ROUTES
 app.get('/', (req, res) => {
-    res.json({developers: "Emma & Gift ..."})
+    res.json({developers: "Emma & Gift ...v2"})
 })
 
 
@@ -47,8 +50,6 @@ app.use('/api/expenses/', expensesRoute)
 
 
 
-// ... other app.use middleware 
-app.use(express.static(path.join(__dirname, "client", "build")))
 
 // ...
 // Right before your app.listen(), add this:
