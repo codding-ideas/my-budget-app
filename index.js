@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({
 
 //ROUTES
 app.get('/', (req, res) => {
-    res.json({developers: "Emma & Gift"})
+    res.json({developers: "Emma & Gift ..."})
 })
 
 
