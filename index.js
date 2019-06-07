@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, "client", "build")))
 
 //ROUTES
 app.get('/', (req, res) => {
-    res.json({developers: "Emma & Gift ...v2"})
+    res.json({developers: "Emma & Gift ...v3"})
 })
 
 
