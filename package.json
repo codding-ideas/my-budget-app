@@ -7,10 +7,15 @@
     "node": "v10.15.1",
     "npm": "6.9.0"
   },
+  
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prexfix client && npm run build --prefix client"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/codding-ideas/my-budget-app.git"
@@ -23,6 +28,7 @@
   "homepage": "https://github.com/codding-ideas/my-budget-app#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "concurrently": "^4.1.0",
     "config": "^3.1.0",
     "express": "^4.17.1",
     "mongoose": "^5.5.12",
