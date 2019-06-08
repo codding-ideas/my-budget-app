@@ -50,7 +50,6 @@ app.use('/api/expenses/', expensesRoute)
 
 
 
-
 // ...
 // Right before your app.listen(), add this:
 app.get("*", (req, res) => {
