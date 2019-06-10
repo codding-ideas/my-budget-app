@@ -10,7 +10,7 @@ class HomePage extends Component {
             <div>
           <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
           <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href='/'>Coding-Ideas</a>
+            <a class="navbar-brand js-scroll-trigger" href='/'>Codhing-Ideas v</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,7 +29,7 @@ class HomePage extends Component {
       
         <header class="bg-primary text-white">
           <div class="container text-center">
-            <h1>Welcome to Coding-Ideas</h1>
+            <h1>Welcome to Coding-Ideas </h1>
             <p class="lead">We devlop with you in mind</p>
           </div>
         </header>
@@ -39,7 +39,7 @@ class HomePage extends Component {
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <h2>App Update</h2>
-                <p class="lead">Below list what has been done on the app</p>
+                <p class="lead">Below  list what d has been done on the app</p>
                 <ul>
                   <li>Created two API's</li>
                   <li>Installing client side app</li>

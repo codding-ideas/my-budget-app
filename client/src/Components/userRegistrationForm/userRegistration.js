@@ -1,5 +1,3 @@
-## REDUX FORM PART 0NE
-
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form'
 //It has methods to make our life easier. This method helps our form to communicate to our redux store
@@ -11,20 +9,38 @@ import { reduxForm, Field } from 'redux-form'
 
 //The handlesubmit accept a callback we defined and it will call when a user submit the form
 
+//In the field tag we have a prop call component which only render input fields so if we want to display checkbox we have to define our custom field input
+
+//Let's create a file that will hold our input fields
+
+//Create a function to render the fields imported
+
+//IMPORT THE FIELDS CREATED
+import usersRegistrationFormFields from './usersRegistrationFields'
+
+
 
 class userRegistration extends Component {
+
+    renderFields () {
+        return (
+            <div>
+                <Field
+                type = 'text'
+                name = 'firstName'
+                component = {usersRegistrationFormFields}/>
+            </div>
+        )
+    }
     render() {
-        console.log(this.props)
+       
         return (
             
             <div>
                 <h1>Form</h1>
                 <form onSubmit ={this.props.handleSubmit(values => console.log(values))}>
-                <Field
-                type = 'text'
-                name = 'firstname'
-                component = 'checkbox'
-                />
+                     {/* //Calling the function */}
+                     {this.renderFields()}
                    <button type='submit'>Register</button>
                    </form>
             </div>
@@ -35,5 +51,3 @@ class userRegistration extends Component {
 export default reduxForm({
     form: 'Users-Form'
 }) (userRegistration);
-
-
