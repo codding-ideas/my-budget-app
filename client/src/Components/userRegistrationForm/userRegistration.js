@@ -1,53 +1,101 @@
 import React, { Component } from 'react';
-import { reduxForm, Field } from 'redux-form'
-//It has methods to make our life easier. This method helps our form to communicate to our redux store
-//The field is use to render any traditional hrml input types. The Field is a component. We pass in props to the Field to tell it how to render itself
-
-//To be able to submit we need to wrap our form with a form tag and in the form tag we place onSubmit
-
-//this.props.handleSubmit is provided to us by redux after we connected our form to the this component using reduxForm
-
-//The handlesubmit accept a callback we defined and it will call when a user submit the form
-
-//In the field tag we have a prop call component which only render input fields so if we want to display checkbox we have to define our custom field input
-
-//Let's create a file that will hold our input fields
-
-//Create a function to render the fields imported
-
-//IMPORT THE FIELDS CREATED
+import { reduxForm, Field } from 'redux-form';
+import * as actions from '../../actions'
+import { connect } from 'react-redux'
 import usersRegistrationFormFields from './usersRegistrationFields'
 
 
 
 class userRegistration extends Component {
-
+ 
     renderFields () {
+        console.log('REDUCERS', this.props.formState)
         return (
             <div>
                 <Field
+                label = 'First Name'
                 type = 'text'
                 name = 'firstName'
                 component = {usersRegistrationFormFields}/>
+
+                 <Field
+                label = 'Last Name'
+                type = 'text'
+                name = 'lastName'
+                component = {usersRegistrationFormFields}/>
+
+
+              <Field
+                label = 'Email'
+                type = 'text'
+                name = 'email'
+                component = {usersRegistrationFormFields}/>
+
+
+               <Field
+                label = 'Password'
+                type = 'text'
+                name = 'password'
+                component = {usersRegistrationFormFields}/>
+               
             </div>
         )
     }
     render() {
-       
+      
         return (
             
-            <div>
-                <h1>Form</h1>
+            <div className='container m-5'>
+                <h2>User's registration</h2>
                 <form onSubmit ={this.props.handleSubmit(values => console.log(values))}>
                      {/* //Calling the function */}
                      {this.renderFields()}
-                   <button type='submit'>Register</button>
+                   <button onClick={()=> this.props.createUserss(this.props.formState.form.usersRegistrationForm.values)} className='btn btn-danger' type='submit'>Register</button>
                    </form>
             </div>
         );
     }
 }
+//======VALIDATION
+
+function validateMethod (values) {
+ const errors = {}
+
+ if (!values.firstName) {
+    errors.firstName = 'You must provide  first name'
+}
+
+   if (!values.lastName) {
+       errors.lastName = 'You must provide  last name'
+   }
+
+
+   if (!values.email) {
+    errors.email = 'You must provide  your email'
+}
+
+if (!values.password) {
+    errors.password = 'You must provide  your password'
+}
+
+
+ return errors
+}
+
+
+const mapStateToProps = (state) => {
+  return {
+     formState: state
+
+  }
+}
+
 
 export default reduxForm({
-    form: 'Users-Form'
-}) (userRegistration);
+    validate: validateMethod,
+    destroyOnUnmount: true,
+    form: 'usersRegistrationForm'
+}) (connect(mapStateToProps, actions) (userRegistration));
+
+
+
