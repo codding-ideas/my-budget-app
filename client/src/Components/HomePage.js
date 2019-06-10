@@ -38,7 +38,7 @@ class HomePage extends Component {
           <div class="container">
             <div class="row">
               <div class="col-lg-8 mx-auto">
-                <h2>App Update</h2>
+                <h2>App Update 2</h2>
                 <p class="lead">Below  list what d has been done on the app</p>
                 <ul>
                   <li>Created two API's</li>
