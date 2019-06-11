@@ -1,24 +1,29 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import * as actions from './actions/' //This pull or actions in this file. Now action becomes the object
-
+import {BrowserRouter, Route } from 'react-router-dom'
 import Home from './Components/HomePage'
 import UsersForms from './Components/Forms/UsersRegistration'
 import ExpensesForm from './Components/Forms/addExpenses'
-class App extends Component {
+import Navbar from './Components/Navbar'
 
-  componentDidMount(){
-    
-   
-  }
+class App extends Component {
   render() { 
    
     return (
+
+      <BrowserRouter>
       <div>
-     <UsersForms/>
-     <ExpensesForm/>
-     <Home/>
+         {/* //always visible */}
+         <Navbar/>
+         <Route exact path ='/' component ={Home}/>
+         <Route exact path ='/register' component ={UsersForms}/>
+         <Route exact path ='/addexpenses' component ={ExpensesForm}/>
+       
+     
       </div>
+
+      </BrowserRouter>
       );
   }
 }
