@@ -4,7 +4,7 @@ import * as actions from './actions/' //This pull or actions in this file. Now a
 
 import Home from './Components/HomePage'
 import UsersForms from './Components/Forms/UsersRegistration'
-
+import ExpensesForm from './Components/Forms/addExpenses'
 class App extends Component {
 
   componentDidMount(){
@@ -16,6 +16,7 @@ class App extends Component {
     return (
       <div>
      <UsersForms/>
+     <ExpensesForm/>
      <Home/>
       </div>
       );

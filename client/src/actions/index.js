@@ -18,3 +18,20 @@ export  const createUsers = (values) => {
     }
     
   }
+
+
+
+  export  const addExpenses = (values) => {
+    return function(dispatch) {
+        axios.post('/api/expenses', values)
+        .then((res) => {
+           
+            return dispatch({
+                type: 'ADD_EXPENSES',
+                payload: res.data
+            })
+        })
+  
+    }
+    
+  }
