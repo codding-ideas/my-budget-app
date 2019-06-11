@@ -9,9 +9,9 @@ class HomePage extends Component {
         return (
             <div>
           <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-          <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href='/'>Codhing-Ideas v</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <div className="container">
+            <a className="navbar-brand js-scroll-trigger" href='/'>Codhing-Ideas v</a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -52,32 +52,32 @@ class HomePage extends Component {
           </div>
         </section>
       
-        <section id="services" class="bg-light">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
+        <section id="services" className="bg-light">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-8 mx-auto">
                 <h2>Services we offer</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+                <p className="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
               </div>
             </div>
           </div>
         </section>
       
         <section id="contact">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-8 mx-auto">
                 <h2>Contact us</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+                <p className="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
               </div>
             </div>
           </div>
         </section>
       
      
-        <footer class="py-5 bg-dark">
-          <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Coding Ideas 2019</p>
+        <footer className="py-5 bg-dark">
+          <div className="container">
+            <p className="m-0 text-center text-white">Copyright &copy; Coding Ideas 2019</p>
           </div>
          
         </footer>
