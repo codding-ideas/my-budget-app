@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../css/scrolling-nav.css';
+import '../../homeTheme/css/scrolling-nav.css'
 import '../../homeTheme/bootstrap/css/bootstrap.min.css';
 import { Link } from 'react-router-dom'
 
@@ -44,6 +44,12 @@ class Navbar extends Component {
                   <li class="nav-item">
                       <Link to='/addexpenses' className='red btn-flat white-text nav-link js-scroll-trigger' >
                           Add Expenses
+                      </Link>
+                </li>
+
+                <li class="nav-item">
+                      <Link to='/dashboard' className='red btn-flat white-text nav-link js-scroll-trigger' >
+                         Dashboard
                       </Link>
                 </li>
               </ul>
