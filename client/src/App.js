@@ -6,8 +6,8 @@ import {BrowserRouter, Route } from 'react-router-dom'
 import NavBar from './Components/Layout/NavBar';
 import HomePage from './Components/Layout/HomePage';
 import UsersRegistrationForm from './Components/Forms/UsersRegistration'
-
-import AddExpensesForm from './Components/Forms/AddExpenses'
+import AddExpensesForm from './Components/Forms/AddExpenses';
+import Dashboard from './Components/Layout/Dashboard'
 
 
 class App extends Component {
@@ -15,12 +15,15 @@ class App extends Component {
    
     return (
 <BrowserRouter>
+
     <div>
       <NavBar/>{/* //always visible */}
-
+     
       <Route exact path ='/' component ={HomePage}/>
       <Route exact path ='/register' component ={UsersRegistrationForm}/>
       <Route exact path ='/addexpenses' component ={AddExpensesForm}/>
+     
+      <Route exact path ='/dashboard' component ={Dashboard}/>
     </div>
 </BrowserRouter>
       );
