@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
-import useForm from "react-hook-form";
+import React  from 'react';
 import { connect } from 'react-redux';
+import useForm from "react-hook-form";
+
 import * as actions  from '../../actions'
 
-function UsersRegistration (props) {
+const  UsersRegistration = (props) => {
+  
     const { register, handleSubmit, reset, errors } = useForm();
-   
+   console.log(props.allUsers)
 
    const onSubmit = (data, e) => {
     e.target.reset(); // reset after form submit
-    props.addExpenses(data)
+   
+    console.log(props)
     alert('Data added successfully!')
     console.log(data)
   };
@@ -71,24 +74,14 @@ function UsersRegistration (props) {
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>First name</td>
-      <td>Last name</td>
-      <td>Email</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+ {props.allUsers.map((user) => {
+   return <tr>
+   <th scope="row">{user.date}</th>
+   <td>{user.firstName}</td>
+   <td>{user.lastName}</td>
+   <td>{user.email}</td>
+ </tr>
+ })}
   </tbody>
 </table>
          </div>
@@ -100,7 +93,7 @@ function UsersRegistration (props) {
 
 const mapstateToProps = (state) => {
     return {
-        allUsers: state.users
+      allUsers:  state.users
     }
 }
 
