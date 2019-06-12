@@ -11,43 +11,43 @@ class Navbar extends Component {
     render() {
         return (
           <div>
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-          <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href='/'>Codhing-Ideas v</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+          <div className="container">
+            <a className="navbar-brand js-scroll-trigger" href='/'>Codhing-Ideas v</a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ml-auto">
+            <div className="collapse navbar-collapse" id="navbarResponsive">
+              <ul className="navbar-nav ml-auto">
 
 
-              <li class="nav-item">
+              <li className="nav-item">
                       <Link to='/' className='red btn-flat white-text nav-link js-scroll-trigger' >
                           Home
                       </Link>
               </li>
-                <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="/api/expenses">Expenses API</a>
+                <li className="nav-item">
+                  <a className="nav-link js-scroll-trigger" href="/api/expenses">Expenses API</a>
                 </li>
                 
-                <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="/api/users">Users API</a>
+                <li className="nav-item">
+                  <a className="nav-link js-scroll-trigger" href="/api/users">Users API</a>
                 </li>
 
-              <li class="nav-item">
+              <li className="nav-item">
                       <Link to='/register' className='red btn-flat white-text nav-link js-scroll-trigger' >
                           Register
                       </Link>
               </li>
 
 
-                  <li class="nav-item">
+                  <li className="nav-item">
                       <Link to='/addexpenses' className='red btn-flat white-text nav-link js-scroll-trigger' >
                           Add Expenses
                       </Link>
                 </li>
 
-                <li class="nav-item">
+                <li className="nav-item">
                       <Link to='/dashboard' className='red btn-flat white-text nav-link js-scroll-trigger' >
                          Dashboard
                       </Link>

@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../../models/users')
-const app = express()
+
 
 
 
 
 
 router.post('/',  async (req, res) => {
-  //destructering input from req.body
+  //destructering input from req.body. The request will be through a form
   const {firstName, lastName, email, password} = req.body
     user = await new User ({
         firstName,
