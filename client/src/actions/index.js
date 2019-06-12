@@ -2,8 +2,6 @@ import axios from 'axios'
 
 
 //We want this action to be called with all the values from our form 
-
-
 export  const createUserss = (values) => {
     return function(dispatch) {
         axios.post('/api/users', values)
@@ -18,6 +16,7 @@ export  const createUserss = (values) => {
     }
     
   }
+
 
 
  export const fetchUsers = () => {

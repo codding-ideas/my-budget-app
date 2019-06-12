@@ -5,16 +5,18 @@ import useForm from "react-hook-form";
 import * as actions  from '../../actions'
 
 const  UsersRegistration = (props) => {
-  
-    const { register, handleSubmit, reset, errors } = useForm();
-   console.log(props.allUsers)
 
+  //destructring methods from react-hook-form
+    const { register, handleSubmit, reset, errors } = useForm();
+   console.log('FORM COMP', props)
+    //All the input data are are passed to the argument passed to the onsubmit function
    const onSubmit = (data, e) => {
+     props.createUserss(data)
     e.target.reset(); // reset after form submit
    
-    console.log(props)
+    
     alert('Data added successfully!')
-    console.log(data)
+    
   };
 
     return (
@@ -75,7 +77,7 @@ const  UsersRegistration = (props) => {
   </thead>
   <tbody>
  {props.allUsers.map((user) => {
-   return <tr>
+   return <tr key={user.id}>
    <th scope="row">{user.date}</th>
    <td>{user.firstName}</td>
    <td>{user.lastName}</td>
@@ -93,7 +95,7 @@ const  UsersRegistration = (props) => {
 
 const mapstateToProps = (state) => {
     return {
-      allUsers:  state.users
+       allUsers:  state.users
     }
 }
 
