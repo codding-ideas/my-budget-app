@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../css/scrolling-nav.css";
-import "../vendor/bootstrap/css/bootstrap.min.css";
+import "../homeTheme/bootstrap/css/bootstrap.min.css";
 
 class HomePage extends Component {
   render() {
