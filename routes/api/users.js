@@ -33,4 +33,16 @@ router.get('/users/:id', async (req, res) => {
 
 
 
+router.delete('/users/:id', (req, res) =>{
+  //DESTROY BLOG
+  User.findByIdAndRemove(req.params.id, (error)=> {
+    if(error){
+      console.log(error)
+    }else{
+      console.log('Worked')
+    }
+  })
+});
+
+
 module.exports = router
