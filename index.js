@@ -5,6 +5,7 @@ const userRoute = require('./routes/api/users')
 const expensesRoute = require('./routes/api/expenses')
 const path = require('path');
 const app = express();
+const cors = require('cors')
 
 //====MongoDb connection function
 connectDb()
@@ -15,6 +16,8 @@ connectDb()
 app.use(express.json({
     extended: false
 }))
+
+app.use(cors())
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
