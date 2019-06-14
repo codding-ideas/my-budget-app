@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const mongodb = require('mongodb');
+const ObjectId = mongodb.ObjectId;
 const User = require('../../models/users')
 
 
@@ -18,6 +20,12 @@ router.post('/',  async (req, res) => {
     })
     user.save()
     res.json(user)
+})
+
+//DETAILS FOR SINGLE PAGE
+router.get('/:id', async (req, res) => {
+   const user = await User.findOne({_id: new ObjectId (req.params.id)});
+   res.status(200).json(user)
 })
 
 

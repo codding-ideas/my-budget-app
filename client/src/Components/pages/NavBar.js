@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../../homeTheme/css/scrolling-nav.css'
-import '../../homeTheme/bootstrap/css/bootstrap.min.css';
+import '../../themes/homeTheme/css/scrolling-nav.css'
+import '../../themes/homeTheme/bootstrap/css/bootstrap.min.css';
 import { Link } from 'react-router-dom'
 
 class Navbar extends Component {
@@ -46,6 +46,14 @@ class Navbar extends Component {
                           Add Expenses
                       </Link>
                 </li>
+
+
+                <li className="nav-item">
+                      <Link to='/users' className='red btn-flat white-text nav-link js-scroll-trigger' >
+                          Customers
+                      </Link>
+                </li>
+
 
                 <li className="nav-item">
                       <Link to='/dashboard' className='red btn-flat white-text nav-link js-scroll-trigger' >

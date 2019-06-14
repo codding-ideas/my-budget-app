@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import useForm from "react-hook-form";
-import * as actions  from '../../actions'
+import * as actions  from '../../redux/actions'
 import { connect } from 'react-redux';
 
 function UsersRegistration (props) {

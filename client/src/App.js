@@ -1,35 +1,31 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {BrowserRouter, Route } from 'react-router-dom'
-
-import NavBar from './Components/Layout/NavBar';
-import HomePage from './Components/Layout/HomePage';
+import NavBar from './Components/pages/NavBar';
+import HomePage from './Components/pages/HomePage';
 import UsersRegistrationForm from './Components/Forms/UsersRegistration'
 import AddExpensesForm from './Components/Forms/AddExpenses';
-import Dashboard from './Components/Layout/Dashboard';
-import * as actions  from './actions'
+import Dashboard from './Components/pages/Dashboard';
+import * as actions  from './redux/actions'
+import UserDetails from './Components/pages/UserDetails'
+import AllUsers from './Components/pages/AllUsers'
 
 
 class App extends Component {
-
-  componentDidMount () {
-    this.props.fetchUsers()
-  }
   render() { 
     
             return (
-        <BrowserRouter>
-
-            <div>
-              <NavBar/>{/* //always visible */}
-            
-              <Route exact path ='/' component ={HomePage}/>
-              <Route exact path ='/register' component ={UsersRegistrationForm}/>
-              <Route exact path ='/addexpenses' component ={AddExpensesForm}/>
-            
-              <Route exact path ='/dashboard' component ={Dashboard}/>
-            </div>
-        </BrowserRouter>
+              <BrowserRouter>
+                  <div> 
+                    <NavBar/>
+                    <Route exact path ='/' component ={HomePage}/>
+                    <Route exact path ='/register' component ={UsersRegistrationForm}/>
+                    <Route exact path ='/addexpenses' component ={AddExpensesForm}/>
+                    <Route exact path ='/dashboard' component ={Dashboard}/>
+                    <Route path ='/users/:id' exact component = {UserDetails}/>
+                    <Route path = '/users' component ={AllUsers}/>
+                  </div>
+              </BrowserRouter>
               );
   }
 }
