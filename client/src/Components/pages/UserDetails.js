@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
-import  logo from '../../images/loading2.svg'
+import  loadingImage from '../../images/loading.svg'
 class UserDetails extends Component {
 state = {
     UserDetails: null,
@@ -19,10 +19,15 @@ componentDidMount(){
     })
 }
 
-    render() {
+render() {
        
-  let content = <img src={logo}/>
-  
+    let content = (
+        <div className=''>
+            <img style={{width:'100px', height: '100px', marginLeft: '300px', marginTop: '100px'}} src={loadingImage} alt='Image for loading'/>
+        </div>
+    )
+
+
   if(!this.state.isLoading && this.state.UserDetails) {
       return (
           <div className = 'm-5'>
