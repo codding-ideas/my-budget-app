@@ -23,7 +23,7 @@ render() {
        
     let content = (
         <div className=''>
-            <img style={{width:'100px', height: '100px', marginLeft: '300px', marginTop: '100px'}} src={loadingImage} alt='Image for loading'/>
+            <img style={{width:'100px', height: '100px', marginLeft: '300px', marginTop: '100px'}} src={loadingImage} alt=' for loading'/>
         </div>
     )
 

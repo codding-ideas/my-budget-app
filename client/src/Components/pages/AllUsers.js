@@ -24,7 +24,7 @@ class AllUsers extends Component {
 
         let content = (
             <div className=''>
-                <img style={{width:'100px', height: '100px', marginLeft: '300px', marginTop: '100px'}} src={loadingImage} alt='Image for loading'/>
+                <img style={{width:'100px', height: '100px', marginLeft: '300px', marginTop: '100px'}} src={loadingImage} alt='for loading'/>
             </div>
         )
     
@@ -50,7 +50,7 @@ class AllUsers extends Component {
                     <th scope="row">{user.firstName}</th>
                     <td>{user.lastName}</td>
                     <td><Link to ={`/users/${user._id}`}>Details</Link></td>
-                    <td><a className='btn btn-danger text-white' >Delete</a></td>
+                    <td><button className='btn btn-danger text-white' >Delete</button></td>
                     </tr>
                          })}
         
