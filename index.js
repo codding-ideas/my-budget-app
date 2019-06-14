@@ -34,8 +34,8 @@ app.get('/', (req, res) => {
 })
 
 
-app.use('/api/users', userRoute);
-app.use('/api/expenses/', expensesRoute)
+app.use('/api', userRoute);
+app.use('/api', expensesRoute)
 
 
 // if(process.env.NODE_ENV === 'production'){

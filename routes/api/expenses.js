@@ -4,7 +4,7 @@ const Expenses = require('../../models/Expenses')
 
 
 
-router.post('/', async (req, res) => {
+router.post('/expense', async (req, res) => {
     //destructering input from req.body
     const {  depositor, amount, description} = req.body
 
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
 })
 
 //Display all expenses
-router.get('/', async (req, res) => {
+router.get('/expenses', async (req, res) => {
     const allExpenses = await Expenses.find();
     res.json(allExpenses)
 })

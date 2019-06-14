@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+
+
 class AllUsers extends Component {
    state = {
        allUsers: []
@@ -8,7 +10,7 @@ class AllUsers extends Component {
 
    //Fetching all users
    componentDidMount() {
-      axios.get(`api/users`)
+      axios.get(`api/users/`)
       .then((res) => {
           this.setState({
               allUsers: res.data
@@ -17,11 +19,12 @@ class AllUsers extends Component {
    }
 
     render() {
+        console.log('All', this.state)
         return (
         <div className ='p-5 m-5'>
                 <h1>All Customers</h1>
                 <div className ='col-12'>
-          <table class="table table-striped">
+          <table className="table table-striped">
             <thead>
                 <tr>
                 <th scope="col">First name</th>

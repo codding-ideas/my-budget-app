@@ -13,7 +13,7 @@ class Navbar extends Component {
           <div>
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
           <div className="container">
-            <a className="navbar-brand js-scroll-trigger" href='/'>Codhing-Ideas v</a>
+            <a className="navbar-brand js-scroll-trigger" href='/'>Coding - ideas</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -41,12 +41,7 @@ class Navbar extends Component {
               </li>
 
 
-                  <li className="nav-item">
-                      <Link to='/addexpenses' className='red btn-flat white-text nav-link js-scroll-trigger' >
-                          Add Expenses
-                      </Link>
-                </li>
-
+                 
 
                 <li className="nav-item">
                       <Link to='/users' className='red btn-flat white-text nav-link js-scroll-trigger' >
