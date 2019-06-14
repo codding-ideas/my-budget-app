@@ -5,19 +5,19 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <header class="bg-primary text-white">
-          <div class="container text-center">
+        <header className="bg-primary text-white">
+          <div className="container text-center">
             <h1>Welcome to Coding-Ideas </h1>
-            <p class="lead">We devlop with you in mind</p>
+            <p className="lead">We devlop with you in mind</p>
           </div>
         </header>
 
         <section id="about">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-8 mx-auto">
                 <h2>App Update 2</h2>
-                <p class="lead">Below list what d has been done on the app</p>
+                <p className="lead">Below list what d has been done on the app</p>
                 <ul>
                   <li>Created two API's</li>
                   <li>Installing client side app</li>

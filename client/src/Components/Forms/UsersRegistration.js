@@ -2,12 +2,12 @@ import React  from 'react';
 import { connect } from 'react-redux';
 import useForm from "react-hook-form";
 import * as actions  from '../../redux/actions';
-import { Link } from 'react-router-dom';
+
 
 const  UsersRegistration = (props) => {
 
   //destructring methods from react-hook-form
-    const { register, handleSubmit, reset, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     //All the input data are are passed to the argument passed to the onsubmit function
 
    const onSubmit = (data, e) => {
@@ -19,7 +19,7 @@ const  UsersRegistration = (props) => {
     return (
         <div className = 'container m-5 pt-5'>
             <h2 className = 'text-muted'>User's Registration Form</h2>
-           <div class="row"> 
+           <div className="row"> 
              <div className ='col-6'>
 
                <h2>Forms -> ID: {props.match.params.id}</h2>

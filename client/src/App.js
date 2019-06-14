@@ -23,7 +23,7 @@ class App extends Component {
                     <Route exact path ='/addexpenses' component ={AddExpensesForm}/>
                     <Route exact path ='/dashboard' component ={Dashboard}/>
                     <Route path ='/users/:id' exact component = {UserDetails}/>
-                    <Route path = '/users' component ={AllUsers}/>
+                    <Route path = '/users' exact component ={AllUsers}/>
                   </div>
               </BrowserRouter>
               );

@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import useForm from "react-hook-form";
 import * as actions  from '../../redux/actions'
 import { connect } from 'react-redux';
 
 function UsersRegistration (props) {
-    const { register, handleSubmit, reset, errors } = useForm();
-   
-    
-
+    const { register, handleSubmit, errors } = useForm();
+  
    const onSubmit = (data, e) => {
     e.target.reset(); // reset after form submit
     
