@@ -10,6 +10,7 @@ const  UsersRegistration = (props) => {
     const { register, handleSubmit, errors } = useForm();
     //All the input data are are passed to the argument passed to the onsubmit function
 
+
    const onSubmit = (data, e) => {
      props.createUserss(data)
     e.target.reset(); // reset after form submit
@@ -29,6 +30,7 @@ const  UsersRegistration = (props) => {
           <input
             type="text"
             name="firstName"
+            value = 'Emmanuel Tweneboah'
             className ='form-control form-control-sm'
             ref={register({ required: true })}
           />
