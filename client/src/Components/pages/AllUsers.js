@@ -32,6 +32,7 @@ import axios from 'axios';
                             <th>Country</th>
                             <th>Email</th>
                             <th>Actions</th>
+                            <th>Info</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,6 +43,8 @@ import axios from 'axios';
                                      <td>{user.country}</td>
                                      <td>{user.email}</td>
                                      <td><Link to = {`/edit/${user._id}`}>Edit</Link></td>
+
+                                     <td><Link to = {`/user/${user._id}`}>Info</Link></td>
                                  </tr>
                              )
                          })}

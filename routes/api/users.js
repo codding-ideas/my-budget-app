@@ -20,7 +20,7 @@ userRouter.post('/create', (req, res) => {
           })
         })
 
-        
+
 
 // UPDATING USER
 //---STEPS
@@ -60,5 +60,11 @@ userRouter.post('/update/:id', (req, res) => {
 })
 
 
+userRouter.delete('/delete/:id', (req, res) => {
+  User.remove(req.params.id)
+  .then((deleted) => {
+     console.log(deleted)
+  })
+})
 
 module.exports = userRouter
