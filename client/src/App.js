@@ -3,7 +3,8 @@ import {BrowserRouter, Route } from 'react-router-dom'
 import NavBar from './Components/pages/NavBar';
 import HomePage from './Components/pages/HomePage';
 import UsersRegistrationForm from './Components/Forms/UsersRegistration'
-import AllUsers from './Components/pages/AllUsers'
+import AllUsers from './Components/pages/AllUsers';
+import EditUser from './Components/pages/EditUser'
 
 
 
@@ -21,6 +22,8 @@ class App extends Component {
                     <Route  path = '/register' exact component = {UsersRegistrationForm}/>
 
                     <Route  path = '/users' exact component = {AllUsers}/>
+
+                    <Route path = '/edit/:id' exact component = {EditUser} />
 
               
                   </div>
