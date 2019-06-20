@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 //Schema holds the fields we want
 //We send this file/model to route that need to create or manipulate user details
 
-const UserSchema = new mongoose.Schema({
-    firstName: {
+const UsersSchema = new mongoose.Schema({
+    name: {
         type: String,
        
     },
-     lastName: {
+     country: {
          type: String,
          
      },
@@ -21,6 +21,14 @@ const UserSchema = new mongoose.Schema({
         type: String,
        
     },
+    bio: {
+        type: String,
+       
+    },
+    marritaStatus: {
+        type: Boolean,
+       
+    },
    
     date: {
         type: Date,
@@ -28,4 +36,4 @@ const UserSchema = new mongoose.Schema({
     }
 });
 
-module.exports = User = mongoose.model('user', UserSchema);
+module.exports = User = mongoose.model('Users', UsersSchema);

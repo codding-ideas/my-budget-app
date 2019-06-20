@@ -1,59 +1,44 @@
 const express = require('express');
 const connectDb = require('./config/db');
 const bodyParser = require('body-parser');
-const userRoute = require('./routes/api/users')
-const expensesRoute = require('./routes/api/expenses')
+const mongoose = require('mongoose')
 const path = require('path');
 const app = express();
 const cors = require('cors')
 
-//====MongoDb connection function
-connectDb()
+//==== IMPORTING ROUTES======
+const userRoutes = require('./routes/api/users')
+//-------End of importing Routes-------
 
 
-//====MIDDLEWARE======
+//====== DB CONNECTION===========
+    //---Live Connection-----
+          //connectDb()
+    // ----Local Connection ----
+mongoose.connect('mongodb://localhost/Budget-App', {
+    useNewUrlParser: true,
+    useCreateIndex: true
+})
+.then(() => console.log("DB Connected. Great!!"));
+
+//--------END OF DB CONNECTION
+
+               //====MIDDLEWARE======
 //This replaces bodyparser
-app.use(express.json({
-    extended: false
-}))
-
+app.use(express.json({extended: false}))
 app.use(cors())
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({
-    extended: false 
-}))
+app.use(bodyParser.urlencoded({extended: false }))
 
-// ... other app.use middleware 
+                   //====USING ROUTES======
+app.use('/api', userRoutes)
+
+                  //----END OF MIDDLEWARE
+
+                  //====SERVING REACT SIDE OF THE APPLICATION
+
 app.use(express.static(path.join(__dirname, "client", "build")))
-
-
-//ROUTES
-app.get('/', (req, res) => {
-    res.json({developers: "Emma & Gift ...v3"})
-})
-
-
-app.use('/api', userRoute);
-app.use('/api', expensesRoute)
-
-
-// if(process.env.NODE_ENV === 'production'){
-//   //Making sure express server server  production asset like main.js or min.css
-//   app.use(express.static('client/build/'))
-
-
-//   //Express will server up the index.html file if it doesn't recocognise the route
-  
-//   app.get('*', (req, res) => {
-//       res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-//   })
-
-// }
-
-
-
-// ...
 // Right before your app.listen(), add this:
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));

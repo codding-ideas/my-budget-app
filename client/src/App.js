@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
 import {BrowserRouter, Route } from 'react-router-dom'
 import NavBar from './Components/pages/NavBar';
 import HomePage from './Components/pages/HomePage';
 import UsersRegistrationForm from './Components/Forms/UsersRegistration'
-
-import Dashboard from './Components/pages/Dashboard';
+import AllUsers from './Components/pages/AllUsers'
 
 
 
@@ -19,6 +17,11 @@ class App extends Component {
                   <div> 
                     <NavBar/>
                     <Route exact path ='/' component ={HomePage}/>
+
+                    <Route  path = '/register' exact component = {UsersRegistrationForm}/>
+
+                    <Route  path = '/users' exact component = {AllUsers}/>
+
               
                   </div>
               </BrowserRouter>
