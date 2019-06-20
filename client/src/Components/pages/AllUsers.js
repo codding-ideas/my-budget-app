@@ -1,5 +1,6 @@
 
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 
  class AllUsers extends Component {
@@ -23,7 +24,7 @@ import axios from 'axios';
         console.log(this.state)
         return (
             <div className = 'm-5 p-5'>
-                <h3>Todos List</h3>
+                <h3>Users List</h3>
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
                         <tr>
@@ -40,7 +41,7 @@ import axios from 'axios';
                                      <td>{user.name}</td>
                                      <td>{user.country}</td>
                                      <td>{user.email}</td>
-                                     <td>Working on</td>
+                                     <td><Link to = {`/edit/${user._id}`}>Edit</Link></td>
                                  </tr>
                              )
                          })}

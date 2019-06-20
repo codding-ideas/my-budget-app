@@ -12,6 +12,16 @@ userRouter.post('/create', (req, res) => {
       })
 })
 
+        //===== FETCHING ALL USERS
+        userRouter.get('/users', (req, res) => {
+          User.find()
+          .then((user) => {
+            return res.json(user)
+          })
+        })
+
+        
+
 // UPDATING USER
 //---STEPS
 //1. Create a route that will display a single user info base on his id and will keep his data into state
@@ -49,13 +59,6 @@ userRouter.post('/update/:id', (req, res) => {
        })
 })
 
-        //===== FETCHING ALL USERS
-        userRouter.get('/users', (req, res) => {
-          User.find()
-          .then((user) => {
-            return res.json(user)
-          })
-        })
 
 
 module.exports = userRouter
