@@ -4,7 +4,8 @@ import NavBar from './Components/pages/NavBar';
 import HomePage from './Components/pages/HomePage';
 import UsersRegistrationForm from './Components/Forms/UsersRegistration'
 import AllUsers from './Components/pages/AllUsers';
-import EditUser from './Components/pages/EditUser'
+import EditUser from './Components/pages/EditUser';
+import UserDetails from './Components/pages/UserDetails'
 
 
 
@@ -25,7 +26,7 @@ class App extends Component {
 
                     <Route path = '/edit/:id' exact component = {EditUser} />
 
-              
+                    <Route  path = '/user/:id' exact component = {UserDetails}/>
                   </div>
               </BrowserRouter>
               );
