@@ -26,13 +26,9 @@ class Navbar extends Component {
                           Home
                       </Link>
               </li>
-                <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="/api/expenses">Expenses API</a>
-                </li>
+      
                 
-                <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="/api/users">Users API</a>
-                </li>
+        
 
               <li className="nav-item">
                       <Link to='/register' className='red btn-flat white-text nav-link js-scroll-trigger' >
@@ -46,13 +42,6 @@ class Navbar extends Component {
                 <li className="nav-item">
                       <Link to='/users' className='red btn-flat white-text nav-link js-scroll-trigger' >
                           Customers
-                      </Link>
-                </li>
-
-
-                <li className="nav-item">
-                      <Link to='/dashboard' className='red btn-flat white-text nav-link js-scroll-trigger' >
-                         Dashboard
                       </Link>
                 </li>
               </ul>
