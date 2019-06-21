@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import * as action from '../../redux/actions' //Importing all actions from the same file
 
 class UserRegistration extends Component {
   state = {
@@ -60,10 +62,8 @@ class UserRegistration extends Component {
                     email: this.state.email,
                     marritalStatus: this.state.marritalStatus    
                 }
-            //Making post request / Creating User
-                axios.post('/api/create', newUser)
-                    .then(res => console.log(res.data));
-            //Clearing the input fields
+            //This is action creator created to make the post request
+            this.props.createUsers(newUser)
 
                 this.setState({
                     name: '',
@@ -169,4 +169,4 @@ class UserRegistration extends Component {
     }
 }
 
-export default UserRegistration;
+export default connect(null, action) (UserRegistration);

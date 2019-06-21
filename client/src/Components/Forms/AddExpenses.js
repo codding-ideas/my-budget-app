@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import *  as action from '../../redux/actions'
 
 class AddExpenses extends Component {
   state = {
@@ -40,10 +42,9 @@ class AddExpenses extends Component {
                     description: this.state.description
                     
                 }
-            //Making post request / Creating User
-                axios.post('/api/addexpenses', newExpenses)
-                    .then(res => console.log(res.data));
-            //Clearing the input fields
+        
+            //Passing the values to this action to make the post request
+            this.props.createExpenses(newExpenses)
 
                 this.setState({
                     withdrawer: '',
@@ -53,7 +54,7 @@ class AddExpenses extends Component {
             }
 
     render() {
-        
+        console.log(this.props)
         return (
             <div className = 'm-5 p-5'>
             <h3>Add Expenses</h3>
@@ -92,4 +93,4 @@ class AddExpenses extends Component {
     }
 }
 
-export default AddExpenses;
+export default connect(null, action) (AddExpenses);

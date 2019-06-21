@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom'
 import '../../themes/startBoot/vendor/bootstrap/css/bootstrap.min.css'
 import '../../themes/startBoot/vendor/fontawesome-free/css/all.css'
 import '../../themes/startBoot/css/agency.css';
@@ -13,7 +14,7 @@ class HomePage extends Component {
       <div className="intro-text">
         <div className="intro-lead-in">Plan -> Design -> Develop</div>
         <div className="intro-heading text-uppercase">Coding ideas</div>
-        <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/">Tell Me More</a>
+        <Link to = {'/register'} className="btn btn-danger btn-xl text-uppercase js-scroll-trigger" >Register</Link>
       </div>
     </div>
   </header>

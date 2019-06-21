@@ -8,7 +8,8 @@ import EditUser from './Components/pages/EditUser';
 import UserDetails from './Components/pages/UserDetails';
 import DeleteUser from './Components/pages/DeleteUser';
 import AddExpenses from './Components/Forms/AddExpenses';
-import AllExpenses from './Components/pages/AllExpenses'
+import AllExpenses from './Components/pages/AllExpenses';
+import Dashboard from './Components/pages/Dashboard'
 
 
 
@@ -36,6 +37,8 @@ class App extends Component {
                     <Route  path = '/addexpenses' exact component = {AddExpenses}/>
 
                     <Route  path = '/expenses' exact component = {AllExpenses}/>
+
+                    <Route  path = '/dashboard' exact component = {Dashboard}/>
                   </div>
               </BrowserRouter>
               );
