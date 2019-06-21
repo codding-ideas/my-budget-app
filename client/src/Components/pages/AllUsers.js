@@ -21,11 +21,11 @@ import axios from 'axios';
     }
 
     render() {
-        console.log(this.state)
         return (
             <div className = 'm-5 p-5'>
                 <div className = 'm-5'>
-                <h3>Users List</h3>
+                <h4>The total number of users are {this.state.allUsers.length}</h4>
+                <hr/>
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
                         <tr className = 'bg-primary text-white'>

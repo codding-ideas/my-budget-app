@@ -6,7 +6,9 @@ import UsersRegistrationForm from './Components/Forms/UsersRegistration'
 import AllUsers from './Components/pages/AllUsers';
 import EditUser from './Components/pages/EditUser';
 import UserDetails from './Components/pages/UserDetails';
-import DeleteUser from './Components/pages/DeleteUser'
+import DeleteUser from './Components/pages/DeleteUser';
+import AddExpenses from './Components/Forms/AddExpenses';
+import AllExpenses from './Components/pages/AllExpenses'
 
 
 
@@ -30,6 +32,10 @@ class App extends Component {
                     <Route  path = '/user/:id' exact component = {UserDetails}/>
 
                     <Route  path = '/delete/:id' exact component = {DeleteUser}/>
+
+                    <Route  path = '/addexpenses' exact component = {AddExpenses}/>
+
+                    <Route  path = '/expenses' exact component = {AllExpenses}/>
                   </div>
               </BrowserRouter>
               );

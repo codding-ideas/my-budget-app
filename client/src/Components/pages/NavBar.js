@@ -37,8 +37,16 @@ class Navbar extends Component {
               </li>
 
 
-                 
-
+              <li className="nav-item">
+                      <Link to='/addexpenses' className='red btn-flat white-text nav-link js-scroll-trigger' >
+                          Add Expenses
+                      </Link>
+              </li>
+              <li className="nav-item">
+                      <Link to='/expenses' className='red btn-flat white-text nav-link js-scroll-trigger' >
+                          All Expenses
+                      </Link>
+                </li>
                 <li className="nav-item">
                       <Link to='/users' className='red btn-flat white-text nav-link js-scroll-trigger' >
                           Customers
