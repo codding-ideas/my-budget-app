@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import sadImage from '../../images/sad.jpg'
-
+import cryingImg from '../../images/crying.gif'
+import { Link } from 'react-router-dom'
 
 class DeleteUser extends Component {
 
@@ -16,11 +16,16 @@ class DeleteUser extends Component {
         return (
             <div className = 'm-5 p-5'>
                 <div className='m-5'>
-                <h4>Oh am deleted</h4>
+                <h4 className = 'text-danger'>Oh am deleted</h4>
                 <div style ={{height: '2px'}}>
-                <img style = {{height: '200px'}} src = {sadImage} alt ='sad'/>
+                <img style = {{height: '200px'}} src = {cryingImg} alt ='sad'/>
+                <Link to = {'/users'} className='btn btn-info'>Go Back</Link>
                 </div>
+               
                 </div>
+               <p>
+              
+               </p>
             </div>
         );
     }
