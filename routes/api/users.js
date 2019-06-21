@@ -61,9 +61,14 @@ userRouter.post('/update/:id', (req, res) => {
 
 
 userRouter.delete('/delete/:id', (req, res) => {
-  User.remove(req.params.id)
-  .then((deleted) => {
-     console.log(deleted)
+  User.findByIdAndRemove(req.params.id)
+  .then((user) => {
+     if(!user) {
+       res.json({message: 'No User Found'})
+     }else {
+       res.send('User was deleted successfully')
+     }
+     
   })
 })
 

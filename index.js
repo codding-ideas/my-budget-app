@@ -13,7 +13,7 @@ const userRoutes = require('./routes/api/users')
 
 //====== DB CONNECTION===========
     //---Live Connection-----
-         connectDb()
+     connectDb()
     // ----Local Connection ----
 
 // mongoose.connect('mongodb://localhost/Budget-App', {

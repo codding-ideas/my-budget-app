@@ -5,7 +5,8 @@ import HomePage from './Components/pages/HomePage';
 import UsersRegistrationForm from './Components/Forms/UsersRegistration'
 import AllUsers from './Components/pages/AllUsers';
 import EditUser from './Components/pages/EditUser';
-import UserDetails from './Components/pages/UserDetails'
+import UserDetails from './Components/pages/UserDetails';
+import DeleteUser from './Components/pages/DeleteUser'
 
 
 
@@ -27,6 +28,8 @@ class App extends Component {
                     <Route path = '/edit/:id' exact component = {EditUser} />
 
                     <Route  path = '/user/:id' exact component = {UserDetails}/>
+
+                    <Route  path = '/delete/:id' exact component = {DeleteUser}/>
                   </div>
               </BrowserRouter>
               );
