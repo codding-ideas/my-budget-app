@@ -24,15 +24,17 @@ import axios from 'axios';
         console.log(this.state)
         return (
             <div className = 'm-5 p-5'>
+                <div className = 'm-5'>
                 <h3>Users List</h3>
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
-                        <tr>
+                        <tr className = 'bg-primary text-white'>
                             <th>Name</th>
                             <th>Country</th>
                             <th>Email</th>
-                            <th>Actions</th>
-                            <th>Info</th>
+                            <th>Edit</th>
+                            <th>info</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,14 +44,17 @@ import axios from 'axios';
                                      <td>{user.name}</td>
                                      <td>{user.country}</td>
                                      <td>{user.email}</td>
-                                     <td><Link to = {`/edit/${user._id}`}>Edit</Link></td>
+                                     <td><Link to = {`/edit/${user._id}`} className='btn btn-primary'>Edit</Link></td>
 
-                                     <td><Link to = {`/user/${user._id}`}>Info</Link></td>
+                                     <td><Link to = {`/user/${user._id}`} className='btn btn-success' >Info</Link></td>
+
+                                     <td><Link to = {`/delete/${user._id}`} className='btn btn-danger'>Delete</Link></td>
                                  </tr>
                              )
                          })}
                     </tbody>
                 </table>
+                </div>
             </div>
         )
     }
