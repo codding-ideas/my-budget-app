@@ -13,14 +13,14 @@ const userRoutes = require('./routes/api/users')
 
 //====== DB CONNECTION===========
     //---Live Connection-----
-         // connectDb()
+         connectDb()
     // ----Local Connection ----
 
-mongoose.connect('mongodb://localhost/Budget-App', {
-    useNewUrlParser: true,
-    useCreateIndex: true
-})
-.then(() => console.log("DB Connected. Great!!"));
+// mongoose.connect('mongodb://localhost/Budget-App', {
+//     useNewUrlParser: true,
+//     useCreateIndex: true
+// })
+// .then(() => console.log("DB Connected. Great!!"));
 
 //--------END OF DB CONNECTION
 
