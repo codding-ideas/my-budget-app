@@ -7,20 +7,21 @@ const app = express();
 const cors = require('cors')
 
 //==== IMPORTING ROUTES======
-const userRoutes = require('./routes/api/users')
+const userRoutes = require('./routes/api/users');
+const addExpensesRoutes = require('./routes/api/addExpenses')
 //-------End of importing Routes-------
 
 
 //====== DB CONNECTION===========
     //---Live Connection-----
-     connectDb()
+     //connectDb()
     // ----Local Connection ----
 
-// mongoose.connect('mongodb://localhost/Budget-App', {
-//     useNewUrlParser: true,
-//     useCreateIndex: true
-// })
-// .then(() => console.log("DB Connected. Great!!"));
+mongoose.connect('mongodb://localhost/Budget-App', {
+    useNewUrlParser: true,
+    useCreateIndex: true
+})
+.then(() => console.log("DB Connected. Great!!"));
 
 //--------END OF DB CONNECTION
 
@@ -32,8 +33,11 @@ app.use(cors())
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: false }))
 
-                   //====USING ROUTES======
+ 
+//====USING ROUTES======
+app.use('/api', addExpensesRoutes)
 app.use('/api', userRoutes)
+
 
                   //----END OF MIDDLEWARE
 

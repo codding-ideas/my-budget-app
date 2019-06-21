@@ -21,7 +21,6 @@ import axios from 'axios';
     }
 
     render() {
-        console.log(this.state)
         return (
             <div className = 'm-5 p-5'>
                 <div className = 'm-5'>

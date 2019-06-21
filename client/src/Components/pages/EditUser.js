@@ -146,7 +146,8 @@ class SingleUser extends Component {
       
         return (
             <div className = 'p-5 m-5'>
-                <h3>Your are editing {this.state.name}</h3>
+                <div className = 'm-5 '>
+                <h3>Your are editing... {this.state.name}</h3>
                <form onSubmit={this.onFormSubmit}>
                 <div className="form-group">
                     <label>Name: </label>
@@ -232,6 +233,7 @@ class SingleUser extends Component {
                     <input type="submit" value="Register" className="btn btn-primary" />
                 </div>
             </form>
+            </div>
             </div>
         );
     }
