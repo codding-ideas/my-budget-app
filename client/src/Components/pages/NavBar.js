@@ -52,6 +52,12 @@ class Navbar extends Component {
                           Customers
                       </Link>
                 </li>
+
+                <li className="nav-item">
+                      <Link to='/dashboard' className='red btn-flat white-text nav-link js-scroll-trigger' >
+                          Dashboard
+                      </Link>
+                </li>
               </ul>
             </div>
           </div>
