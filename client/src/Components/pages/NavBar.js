@@ -1,70 +1,21 @@
-import React, { Component } from 'react';
-import '../../themes/homeTheme/css/scrolling-nav.css'
-import '../../themes/homeTheme/bootstrap/css/bootstrap.min.css';
-import { Link } from 'react-router-dom'
-
-class Navbar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  };
-    }
-    render() {
-        return (
-          <div>
-          <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-          <div className="container">
-            <a className="navbar-brand js-scroll-trigger" href='/'>Coding - ideas</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarResponsive">
-              <ul className="navbar-nav ml-auto">
+import React from 'react';
 
 
-              <li className="nav-item">
-                      <Link to='/' className='red btn-flat white-text nav-link js-scroll-trigger' >
-                          Home
-                      </Link>
-              </li>
-      
-                
-        
-
-              <li className="nav-item">
-                      <Link to='/register' className='red btn-flat white-text nav-link js-scroll-trigger' >
-                          Register
-                      </Link>
-              </li>
-
-
-              <li className="nav-item">
-                      <Link to='/addexpenses' className='red btn-flat white-text nav-link js-scroll-trigger' >
-                          Add Expenses
-                      </Link>
-              </li>
-              <li className="nav-item">
-                      <Link to='/expenses' className='red btn-flat white-text nav-link js-scroll-trigger' >
-                          All Expenses
-                      </Link>
-                </li>
-                <li className="nav-item">
-                      <Link to='/users' className='red btn-flat white-text nav-link js-scroll-trigger' >
-                          Customers
-                      </Link>
-                </li>
-
-                <li className="nav-item">
-                      <Link to='/dashboard' className='red btn-flat white-text nav-link js-scroll-trigger' >
-                          Dashboard
-                      </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-        );
-    }
+const Navbar = () => {
+    return (
+        <div>
+         <nav class="navbar bg-dark">
+      <h1>
+        <a href="index.html"><i class="fas fa-code"></i> iBudget</a>
+      </h1>
+      <ul>
+        <li><a href="profiles.html">Dashboard</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+        </div>
+    )
 }
 
-export default Navbar;
+export default Navbar

@@ -4,11 +4,11 @@ import App from './App'
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
-import users from './redux/reducers';
+import rootReducer from './redux/reducers';
 import { composeWithDevTools} from 'redux-devtools-extension';
 
 // const store = createStore(users, composeWithDevTools(applyMiddleware(reduxThunk)) )
-const store = createStore(users, composeWithDevTools(applyMiddleware(reduxThunk)))
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(reduxThunk)))
 
 ReactDOM.render(
 <Provider store = {store}>
@@ -17,5 +17,3 @@ ReactDOM.render(
 
   </Provider>,
 document.getElementById('root'));
-
-
