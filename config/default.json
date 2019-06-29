@@ -1,4 +1,6 @@
 {
-    "mongoURI": "mongodb+srv://emmanuel:emmanuel@my-budget-app-ujlhm.mongodb.net/budget-app"
-
+ "mongoURI": "",
+ "jwtSecret": "secret",
+ "githubClientId": "",
+ "githubSecret": ""
 }

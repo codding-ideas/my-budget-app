@@ -1,75 +1,71 @@
-const express = require('express');
-const userRouter = express.Router();
-const User = require('../../models/users')
+ const express = require('express');
+ const usersRouter = express.Router();
+ const User = require('../../models/Users')
+ const bcrypt = require('bcryptjs');
+ const jwt = require('jsonwebtoken');
+const config = require('config')
 
 
-//CREATING USER
-userRouter.post('/create', (req, res) => {
-    const user = new User(req.body)
-      user.save()
-      .then((user) => {
-        res.json(user)
-      })
-})
+//CREATE A USER AND GET A TOKEN
 
-        //===== FETCHING ALL USERS
-        userRouter.get('/users', (req, res) => {
-          User.find()
-          .then((user) => {
-            return res.json(user)
-          })
-        })
+usersRouter.post('/users', async (req, res) => {
+    //Destructure the data coming from the req body
 
-
-
-// UPDATING USER
-//---STEPS
-//1. Create a route that will display a single user info base on his id and will keep his data into state
-
-userRouter.get('/user/:id', (req, res) => {
- 
-  User.findById(req.params.id)
-  .then((user) => {
     
-  res.json(user)
-  })
-  
-})
+    const {name, email, password} = req.body;
 
-//2. Create a route that that will take the id of the user created above and make another request if that user is found then we can grap all the data from that user from the state and make them available to user to edit through form
-userRouter.post('/update/:id', (req, res) => {
- 
-       User.findById(req.params.id, (err, user) => {
+    //Check if the email is already registered
+    try {
+        let user = await User.findOne({email: email});
+        if(user) {
+         return res.status(400).json({errors: [{msg: 'User already exist'}]})
+        }
+
+         //If the email is not created the we create the user
+         user = new User({name, email, password})
+
+         //Hash password before saving
+         const salt = await bcrypt.genSalt(10);
+
+         //Take only the password and has it
+         user.password = await bcrypt.hash(password, salt)
+
+         //Save the user
+         await user.save()
+
+         //Creating a token
+
+         //We are taking the id of the user as an identifier to the token
+
+         const payload = {
+             user: {
+                 id: user.id
+             }
+         }
          
-          if(!user) {
-            res.status(400).send('Update failed')
-          }else {
-            //if the user is found by the id, at this point the user all the fields properties attached as user.name, user.email etc, now we are replacing the former data with the data coming from the request body
-             user.name = req.body.name;
-             user.country = req.body.country;
-             user.bio = req.body.bio;
-             user.passwrod = req.body.passwrod;
-             user.email = req.body.email;
-             user.marritalStatus = req.body.marritalStatus
-
-          }
-          user.save().then((user) => {
-           return res.json(user)
-          })
-       })
-})
+         jwt.sign(payload, 'secret', { expiresIn: 360000 },
+            (err, token) => {
+              if (err) throw err;
+                res.json({ token });
+            }
+          );
 
 
-userRouter.delete('/delete/:id', (req, res) => {
-  User.findByIdAndRemove(req.params.id)
-  .then((user) => {
-     if(!user) {
-       res.json({message: 'No User Found'})
-     }else {
-       res.send('User was deleted successfully')
-     }
+         console.log('payload', payload)
+        return  res.json(token)
+    } catch (error) {
      
-  })
+    }
+
 })
 
-module.exports = userRouter
+ usersRouter.get('/', (req, res) => {
+  res.send('Hii')
+ })
+
+
+
+
+
+
+ module.exports = usersRouter;
