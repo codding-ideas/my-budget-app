@@ -1,10 +1,10 @@
 const express = require('express');
-// const connectDb = require('./config/db');
+const connectDb = require('./config/db');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
- const path = require('path');
-const app = express();
- const cors = require('cors')
+// const path = require('path');
+// const app = express();
+// const cors = require('cors')
 
 // //==== IMPORTING ROUTES======
 // const userRoutes = require('./routes/api/users');
@@ -14,7 +14,7 @@ const app = express();
 
 //====== DB CONNECTION===========
     //---Live Connection-----
-    // connectDb()
+     connectDb()
     // ----Local Connection ----
 
 // mongoose.connect('mongodb://localhost/Budget-App', {
@@ -45,7 +45,6 @@ app.use(bodyParser.urlencoded({extended: false }))
 
 app.use(express.static(path.join(__dirname, "client", "build")))
 // Right before your app.listen(), add this:
-
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });

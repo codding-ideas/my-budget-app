@@ -2,14 +2,14 @@
   "name": "my-budget-app",
   "version": "1.0.0",
   "description": "Budget manager",
-  "main": "index.js",
+  "main": "app.js",
   "engines": {
     "node": "v10.15.1",
     "npm": "6.9.0"
   },
   "scripts": {
-    "start": "node index.js",
-    "server": "nodemon index.js",
+    "start": "node app.js",
+    "server": "nodemon app.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
     "heroku-postbuild": "cd client && npm install && npm run build"
