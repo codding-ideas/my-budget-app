@@ -10,7 +10,7 @@ const cors = require('cors')
 // //Connect to DB
 // mongodbConnect()
 
-mongoose.connect('mongodb://localhost/iBudget', {
+mongoose.connect('mongodb://localhost/emma', {
         useNewUrlParser: true,
         useCreateIndex: true
     })
@@ -26,8 +26,12 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(express.json({ extended: false }));
 app.use(cors())
 
+
+
 //SERVING ROUTES
 app.use('/api/users', usersRoutes)
+
+
 
 // Right before your app.listen(), add this:
 app.get("*", (req, res) => {
