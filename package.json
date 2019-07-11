@@ -29,7 +29,6 @@
   },
   "homepage": "https://github.com/tweneboah/iBudget-app#readme",
   "dependencies": {
-    "bcrypt": "^3.0.6",
     "bcryptjs": "^2.4.3",
     "config": "^3.1.0",
     "cors": "^2.8.5",

@@ -19,21 +19,44 @@ usersRouter.post('/', async (req, res) => {
         //If the email is not created the we create the user
         user = new User({name, email, password})
 
-        //Hash the password
-        const salt = bcrypt.genSalt(10)
-        user.password = await bcrypt.hash(password, salt);
+         //Hash the password
+        const salt = await bcrypt.genSalt(10)
+         user.password = await bcrypt.hash(password, salt)
+  
+           //Save the user
+           await user.save()
 
-        //Save the user
-        await user.save()
-        
-       return  res.json(user)
+         //Create a token for the user
+
+         //1. Create a payload
+         const payload = {
+             user: {
+                 id: user.id
+             }
+         }
+
+        //2. Sign a token
+        jwt.sign(payload, config.get('jwtSecret'), {
+                    expiresIn: 360000
+                }, (err, token) => {
+             if(err){
+                 throw err
+             }else{
+                 return res.json({
+                     token: token,
+                     user: user
+                 })
+             }
+        })     
+       
    } catch (error) {
     res.json({
-     myyerror: error
+     error: error
     })
    }
 
 })
+
 
 
 usersRouter.get('/', async(req, res) => {
