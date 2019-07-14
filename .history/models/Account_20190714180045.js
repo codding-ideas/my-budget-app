@@ -6,7 +6,7 @@ const incomeSchema = new mongoose.Schema({
   type: mongoose.Schema.Types.ObjectId,
   ref: 'user'
 },
-
+//
  incomeAmount: {
     type: String,
     required: true
