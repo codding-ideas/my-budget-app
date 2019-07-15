@@ -1,33 +1,23 @@
 const express = require('express');
-const auth = require('../../middleware/auth');
-const authRouter = express.Router();
-const User = require('../../models/User')
-const { check, validationResult} = require('express-validator');
+const usersRouter = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
-
-//Return my profile
-
-// authRouter.get('/', auth, async (req, res) => {
-//       try {
-//             const user = await User.findById(req.user.id);
-//             res.json(user)
-//       } catch (error) {
-//          console.log(error.message);
-//          res.status(500).send('server error')
-//       }
-// });
+const User = require('../../models/User');
+const Income = require('../../models/Income')
+const auth = require('../../middleware/auth');
+const   Account = require('../../models/Income')
+const { check, validationResult} = require('express-validator')
 
 
-//LOGIN
 
-authRouter.post('/', [
+
+usersRouter.post('/', [check('name', 'Name is require').not().isEmpty(),
 check('email', 'Email is required').isEmail(),
-check('password', 'Password is required').exists()
+check('password', 'Password is required with minimum length of 4').isLength({min: 4})
 ], async (req, res) => {
   //set errors
-  const errors = validationResult(req)
+  const errors = validationResult(req)//We pass all the req the validationResults and then we check for errors
 
   if(!errors.isEmpty()){
     //This means if there are errors
@@ -35,24 +25,28 @@ check('password', 'Password is required').exists()
      //We are sending back the all the errors to the user and there is a method on it call .array() and this contains all the errors
   }
    
+
+  
     try {
 
      //1. Destructure
-     const {email, password } = req.body
+     const { name, email, password } = req.body
 
       //see if a user exists
 
       let user = await User.findOne({email: email});
-      if(!user){
-       return res.status(400).json({errors: [{msg: 'Invalid Credentials'}]}) //Matching errors from the error array, thus either is from name, email or password
+      if(user){
+       return res.status(400).json({errors: [{msg: 'User already exisit'}]}) //Matching errors from the error array, thus either is from name, email or password
       }
  
-    //Check if  password matches
-    const isPasswordMatch = await bcrypt.compare(password, user.password)
 
-    if(!isPasswordMatch){
-     return res.status(400).json({errors: [{msg: 'Invalid Credentials'}]}) //Matching errors from the error array, thus either is from name, email or password
-    }
+  //Creare the user 
+  user = new User({name, email, password});
+  //Encrypt password
+  const salt = await bcrypt.genSalt(10);
+  user.password = await bcrypt.hash(password, salt);
+  await user.save();
+
 
   //CREATING TOKEN
   //1.Create a payload
@@ -63,7 +57,8 @@ check('password', 'Password is required').exists()
 
   const payload = {
     user: {
-      id: user.id //
+      id: user.id,
+      name: user.name //
     }
   }
 
@@ -80,13 +75,24 @@ check('password', 'Password is required').exists()
                  })
              }
         })     
+  //Encrypt password
 
+  //return jwt
     } catch (error) {
        console.log(error.message)
-       res.status(500).send('Server error')
+      // res.status(400).
     }
 
 })
 
-module.exports = authRouter;
+//All
+usersRouter.get('/', async (req, res) => {
+   try {
+      const allUsers = await User.find();
+      res.json(allUsers)
+   } catch (error) {
+      console.log(error.message)
+   }
+})
 
+module.exports = usersRouter;

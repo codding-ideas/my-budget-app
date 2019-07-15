@@ -19,7 +19,7 @@ const incomeSchema = new mongoose.Schema([{
   type: Date,
   default: Date.now()
  }
-}]);
+});
 
 const Income = mongoose.model('income', incomeSchema);
 

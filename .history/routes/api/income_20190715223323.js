@@ -34,7 +34,7 @@ incomeRouter.post('/create', auth,  async (req, res) => {
 //FETCH ALL USERS BASE ON USERS
 incomeRouter.get('/me', auth,  async (req, res) => {
       try {
-              const allIncome =  await Income.find({user: req.user.id}).populate('user', ['name', 'email']);
+              const allIncome =  await Income.find({user: req.user.id}).;
               res.json(allIncome)
       } catch (error) {
             
@@ -45,7 +45,7 @@ incomeRouter.get('/me', auth,  async (req, res) => {
 
 incomeRouter.get('/',  async (req, res) => {
       try {
-              const allIncome =  await Income.find().populate('user', ['name', 'email']);
+              const allIncome =  await Income.find();
               res.json(allIncome)
       } catch (error) {
             

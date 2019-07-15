@@ -45,7 +45,7 @@ incomeRouter.get('/me', auth,  async (req, res) => {
 
 incomeRouter.get('/',  async (req, res) => {
       try {
-              const allIncome =  await Income.find().populate('user', ['name', 'email']);
+              const allIncome =  await Income.find().populate('user');
               res.json(allIncome)
       } catch (error) {
             
