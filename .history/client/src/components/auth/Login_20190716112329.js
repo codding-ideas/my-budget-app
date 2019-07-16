@@ -13,6 +13,9 @@ import  {createUsers} from '../../redux/actions/userRegisterAction';
    })
 
  //=======FOR CHANGE METHODS======
+ const onChangeName = (e) => {
+    setFormData({...formData, name: e.target.value})
+ }
 
  const onChangeEmail = (e) => {
     setFormData({...formData, email: e.target.value})
@@ -36,10 +39,21 @@ const { register, handleSubmit, reset, errors } = useForm();
   return (
    <div>
      <section className="container">
-      <h1 className="large text-primary">Sign in</h1>
+      <h1 className="large text-primary">Sign Up</h1>
       <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
       <form className="form" onSubmit = {handleSubmit(onFormSubmit)}>
         <div className='text-danger'>
+         <div className="form-group">
+          <input
+           type="text"
+            placeholder="Name"
+            name="name" 
+            onChange = {onChangeName}
+             ref = {register({required: true})}
+            />
+        {errors.name && 'Name is required'}
+        </div>
+
         <div className="form-group">
           <input
           type="email" 
@@ -66,7 +80,7 @@ const { register, handleSubmit, reset, errors } = useForm();
        </div>
       </form>
       <p className="my-1">
-        Don't have an account? <Link to="/register">Register</Link>
+        Don't have an account? <Link to="/register">Login</Link>
       </p>
     </section>
    </div>
