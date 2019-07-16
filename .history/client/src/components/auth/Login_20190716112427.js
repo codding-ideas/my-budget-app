@@ -66,7 +66,7 @@ const { register, handleSubmit, reset, errors } = useForm();
        </div>
       </form>
       <p className="my-1">
-        Don't have an account? <Link to="/register">Register</Link>
+        Don't have an account? <Link to="/register">Login</Link>
       </p>
     </section>
    </div>

@@ -19,11 +19,11 @@ const Navbar = () => {
            </li>
 
            <li>
-            <Link to = '/register'>Register</Link>
+            <Link to = '/'>Register</Link>
            </li>
 
            <li>
-            <Link to = '/login'>Login</Link>
+            <Link to = '/'>Login</Link>
            </li>
        </ul>
   </div>
