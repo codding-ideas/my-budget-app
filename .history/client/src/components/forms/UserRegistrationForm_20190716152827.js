@@ -7,10 +7,6 @@ import  {setAlert} from '../../redux/actions/alertAction';
 
 
  const UsersRegistration = (props) => {
-
-  //BUILT IN FUNCTIONS FROM HOOK FORMS
-const { register, handleSubmit, reset, errors } = useForm();
-
   //STATE
    const [ formData, setFormData ] = useState({
        name: '',
@@ -50,14 +46,17 @@ const { register, handleSubmit, reset, errors } = useForm();
     }else {
       props.createUsers(formData);
       console.log('Registartion was successful')
-      //Reseting for
-      reset()
+      e.target.reset()
+
     }
 
    
   };
 
   console.log(props)
+//BUILT IN FUNCTIONS FROM HOOK FORMS
+const { register, handleSubmit, reset, errors } = useForm();
+
 
   return (
 
@@ -75,6 +74,7 @@ const { register, handleSubmit, reset, errors } = useForm();
             name="name" 
             onChange = {onChangeName}
              ref = {register({required: true})}
+             onClick = {reset}
             />
         {errors.name && 'Name is required'}
         </div>

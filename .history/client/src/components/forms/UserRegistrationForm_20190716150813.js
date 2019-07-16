@@ -7,10 +7,6 @@ import  {setAlert} from '../../redux/actions/alertAction';
 
 
  const UsersRegistration = (props) => {
-
-  //BUILT IN FUNCTIONS FROM HOOK FORMS
-const { register, handleSubmit, reset, errors } = useForm();
-
   //STATE
    const [ formData, setFormData ] = useState({
        name: '',
@@ -50,15 +46,15 @@ const { register, handleSubmit, reset, errors } = useForm();
     }else {
       props.createUsers(formData);
       console.log('Registartion was successful')
-      //Reseting for
-      reset()
+      
     }
 
    
   };
 
   console.log(props)
-
+//BUILT IN FUNCTIONS FROM HOOK FORMS
+const { register, handleSubmit, reset, errors } = useForm();
   return (
 
    

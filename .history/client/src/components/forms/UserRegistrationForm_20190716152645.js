@@ -8,8 +8,10 @@ import  {setAlert} from '../../redux/actions/alertAction';
 
  const UsersRegistration = (props) => {
 
-  //BUILT IN FUNCTIONS FROM HOOK FORMS
+//BUILT IN FUNCTIONS FROM HOOK FORMS
 const { register, handleSubmit, reset, errors } = useForm();
+
+
 
   //STATE
    const [ formData, setFormData ] = useState({
@@ -39,29 +41,21 @@ const { register, handleSubmit, reset, errors } = useForm();
 
   //=========== SUBMIT=======
 
-  const onFormSubmit = e => {
+const onFormSubmit = (e) => {
+
+      if(formData.password !== formData.password2){
+        props.setAlert('Password do not match', 'danger')
+        console.log('Password do not match')
+      }else {
+        props.createUsers(formData);
+        console.log('Registartion was successful')
+      
   
-//Calling the action creator
-   
-
-    if(formData.password !== formData.password2){
-      props.setAlert('Password do not match', 'danger')
-      console.log('Password do not match')
-    }else {
-      props.createUsers(formData);
-      console.log('Registartion was successful')
-      //Reseting for
-      reset()
-    }
-
-   
-  };
-
-  console.log(props)
+      }
+     
+    };
 
   return (
-
-   
    <div>
      <section className="container">
       <h1 className="large text-primary">Sign Up</h1>

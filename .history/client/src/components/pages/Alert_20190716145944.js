@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 
+
+
 const Alert = (props) => {
   
  return props.alerts !==  null && props.alerts.length > 0 && props.alerts.map((alert) => {

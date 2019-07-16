@@ -50,8 +50,7 @@ const { register, handleSubmit, reset, errors } = useForm();
     }else {
       props.createUsers(formData);
       console.log('Registartion was successful')
-      //Reseting for
-      reset()
+      RES
     }
 
    
