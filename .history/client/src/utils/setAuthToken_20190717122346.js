@@ -6,13 +6,12 @@
 
 //We will add a global header to axios so we need to import it
 
-import axios from 'axios';
+import axios from 'axios'
 
 //All what this method is doing is it will check if there is a token in a local storage or not. If there is one then we will set it as a global header to axios
 
 
-//This works like when making request to protective you have to the token along and this is how we do it ...  x-auth-token = 332jndjcnjjjcnxcx thus the token so we want to do same on the client side so this function will put the token in the header of any request
-
+//This works like when making request to protective you have to the token along and this is how we do it ...  x-auth-token = 332jndjcnjjjcnxcx thus the token so we want to do same on the client side so this function will put the token in the header of 
 const setAuthToken = token => {
    //Check if there is a token
     //The token we pass in will come from the local storage

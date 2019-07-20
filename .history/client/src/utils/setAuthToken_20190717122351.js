@@ -6,7 +6,7 @@
 
 //We will add a global header to axios so we need to import it
 
-import axios from 'axios';
+import axios from 'axios'
 
 //All what this method is doing is it will check if there is a token in a local storage or not. If there is one then we will set it as a global header to axios
 
