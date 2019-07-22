@@ -22,7 +22,7 @@ if(localStorage.token) {
 
 const  App = ()  => {
 
-  console.log('Store', store)
+  console.log(sto)
 //useffect
 useEffect(() => {
   store.dispatch(loadUser()) //Load user function is not an action creator so we can call it as this
