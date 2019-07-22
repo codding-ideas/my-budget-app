@@ -4,6 +4,10 @@ import reduxThunk from 'redux-thunk';
 
 //root reducer
 import rootReducer from './redux/reducers';
+
+
+
+
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(reduxThunk)))
 
 
