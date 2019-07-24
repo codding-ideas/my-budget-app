@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-localStorage.setItem('name', 'Emmanuel');
+window.localStorage.setItem('name', 'Emmanuel');
 
 console.log(localStorage)
 ReactDOM.render(

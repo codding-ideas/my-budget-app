@@ -7,14 +7,14 @@ import Login from './components/auth/Login';
 import Alert from './components/pages/Alert';
 import './App.css';
 
-
+//window.localStorage.setItem('name', 'Obaseki Nosa');
 
 //REDUX
 import { Provider } from 'react-redux';
 import store from './store'
 //AUTH
 import setAuthToken from './utils/setAuthToken'
-import { loadUser } from './redux/actions/createUserAction' //We have to call this action
+import { loadUser } from './redux/actions/auth' //We have to call this action
 //We want to check the user as soon as it runs 
 
 // if(localStorage.token) {

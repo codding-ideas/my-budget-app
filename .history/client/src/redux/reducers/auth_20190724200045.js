@@ -4,13 +4,13 @@
    token: localStorage.getItem('token'),
    isAuthenticated: null,
    loading: true,
-   user: null
+   user: null,
+   myStorage
  };
  
  export default function(state = initialState, action) {
    const { type, payload } = action;
 
- console.log(localStorage)
  
    switch (type) {
      case 'USER_LOADED':
