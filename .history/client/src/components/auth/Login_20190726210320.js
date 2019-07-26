@@ -1,15 +1,12 @@
 import React, { useState} from 'react'
 import { connect } from 'react-redux';
 import  useForm from 'react-hook-form';
-import { Link, Redirect} from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import  {login} from '../../redux/actions/createUserAction';
 
 
  const Login = (props) => {
-   //BUILT IN FUNCTIONS FROM HOOK FORMS
-const { register, handleSubmit, errors } = useForm();
-
-   console.log('Login form', props.loginUser)
+   console.log('Login form', props)
   //STATE
    const [ formData, setFormData ] = useState({
        email: '',
@@ -36,13 +33,10 @@ const { register, handleSubmit, errors } = useForm();
   };
 
 //REDIRECT IF AUTHENTICATED
-if(props.loginUser.isAuthenticated){
-  return(
-    <Redirect to ='/dashboard'/>
-  )
-}
+if()
 
-
+//BUILT IN FUNCTIONS FROM HOOK FORMS
+const { register, handleSubmit, errors } = useForm();
   return (
    <div>
      <section className="container">
@@ -85,7 +79,7 @@ if(props.loginUser.isAuthenticated){
 
 const mapStateToProps = (state) => {
   return {
-    loginUser: state.auth
+    loginUser: state.users
   }
 }
 

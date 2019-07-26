@@ -36,7 +36,7 @@ const { register, handleSubmit, errors } = useForm();
   };
 
 //REDIRECT IF AUTHENTICATED
-if(props.loginUser.isAuthenticated){
+if(props.loginUser){
   return(
     <Redirect to ='/dashboard'/>
   )
@@ -85,7 +85,7 @@ if(props.loginUser.isAuthenticated){
 
 const mapStateToProps = (state) => {
   return {
-    loginUser: state.auth
+    loginUser: state.users
   }
 }
 

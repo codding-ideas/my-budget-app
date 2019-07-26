@@ -85,7 +85,7 @@ if(props.loginUser.isAuthenticated){
 
 const mapStateToProps = (state) => {
   return {
-    loginUser: state.auth
+    loginUser: state.users
   }
 }
 

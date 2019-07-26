@@ -9,7 +9,7 @@ import  {login} from '../../redux/actions/createUserAction';
    //BUILT IN FUNCTIONS FROM HOOK FORMS
 const { register, handleSubmit, errors } = useForm();
 
-   console.log('Login form', props.loginUser)
+   console.log('Login form', props)
   //STATE
    const [ formData, setFormData ] = useState({
        email: '',
@@ -85,7 +85,7 @@ if(props.loginUser.isAuthenticated){
 
 const mapStateToProps = (state) => {
   return {
-    loginUser: state.auth
+    loginUser: state.users
   }
 }
 

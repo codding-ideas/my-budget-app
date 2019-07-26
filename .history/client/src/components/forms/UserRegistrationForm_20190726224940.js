@@ -7,7 +7,7 @@ import  {setAlert} from '../../redux/actions/alertAction';
 
 
  const UsersRegistration = (props) => {
-console.log('REGISTRATION FORM', props.isLogin.isAuthenticated)
+console.log('REGISTRATION FORM', props.isLogin)
   //BUILT IN FUNCTIONS FROM HOOK FORMS
 const {handleSubmit, reset, errors } = useForm();
 
@@ -56,7 +56,7 @@ const {handleSubmit, reset, errors } = useForm();
 
   //REDIRECT AFTER REGISTRATING
 
-  if(props.isLogin.isAuthenticated) {
+  if(props.isLogin.isAthenticated) {
     return (
       <Redirect to ='/dashboard'/>
     )
