@@ -40,7 +40,7 @@ const authLinks = (
    </li>
 
    <li>
-     <Link to='/dashboard'>Dashboard</Link>
+     <Link to='/profiles'>Dashboard</Link>
    </li>
 
    <li>

@@ -43,7 +43,7 @@ useEffect(() => {
               <Route exact path = '/register' component = {Register}/>
               <Route exact path = '/login' component = {Login}/>
 
-              <Route exact path = '/dashboard' component = {Dashboard}/>
+              <Route exact path = '/dash' component = {Login}/>
             </Switch>
         </section>
       </div>

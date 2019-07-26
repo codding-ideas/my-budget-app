@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import Dashboard from './components/pages/Dashboard'
 
 const Navbar = (props) => {
   console.log('Props from Navbar', props.navLogin)
@@ -40,7 +40,7 @@ const authLinks = (
    </li>
 
    <li>
-     <Link to='/dashboard'>Dashboard</Link>
+     <Link to='/profiles'>Dashboard</Link>
    </li>
 
    <li>

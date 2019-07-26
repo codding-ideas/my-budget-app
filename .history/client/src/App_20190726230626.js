@@ -5,7 +5,7 @@ import Landing from './components/Layouts/Home'
 import Register from './components/forms/UserRegistrationForm';
 import Login from './components/auth/Login';
 import Alert from './components/pages/Alert';
-import Dashboard from './components/pages/Dashboard'
+import Dashboard from './components/'
 import './App.css';
 
 
@@ -42,8 +42,6 @@ useEffect(() => {
             <Switch>
               <Route exact path = '/register' component = {Register}/>
               <Route exact path = '/login' component = {Login}/>
-
-              <Route exact path = '/dashboard' component = {Dashboard}/>
             </Switch>
         </section>
       </div>
