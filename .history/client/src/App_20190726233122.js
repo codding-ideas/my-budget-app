@@ -7,7 +7,7 @@ import Login from './components/auth/Login';
 import Alert from './components/pages/Alert';
 import Dashboard from './components/pages/Dashboard'
 import MyAccount from './components/pages/MyAccount';
-import Logout from './components/pages/Logout';
+import Logout from './components/pages/';
 
 import './App.css';
 
@@ -47,10 +47,6 @@ useEffect(() => {
               <Route exact path = '/login' component = {Login}/>
 
               <Route exact path = '/dashboard' component = {Dashboard}/>
-
-              <Route exact path = '/logout' component = {Logout}/>
-
-              <Route exact path = '/account' component = {MyAccount}/>
             </Switch>
         </section>
       </div>

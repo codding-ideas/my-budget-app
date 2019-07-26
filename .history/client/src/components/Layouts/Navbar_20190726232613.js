@@ -44,7 +44,7 @@ const authLinks = (
    </li>
 
    <li>
-     <Link to='/logout'>Logout</Link>
+     <Link to='/profiles'>Logout</Link>
    </li>
   </ul>
 )
@@ -57,11 +57,11 @@ const guestLinks = (
    </li>
 
    <li>
-     <Link to='/register'>Register</Link>
+     <Link to='/profiles'>Register</Link>
    </li>
 
    <li>
-     <Link to='/login'>Login</Link>
+     <Link to='/profiles'>Login</Link>
    </li>
   </ul>
 )

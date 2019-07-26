@@ -50,7 +50,7 @@ useEffect(() => {
 
               <Route exact path = '/logout' component = {Logout}/>
 
-              <Route exact path = '/account' component = {MyAccount}/>
+              <Route exact path = '/logout' component = {Logout}/>
             </Switch>
         </section>
       </div>

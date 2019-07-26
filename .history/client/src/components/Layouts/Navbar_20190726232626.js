@@ -44,7 +44,7 @@ const authLinks = (
    </li>
 
    <li>
-     <Link to='/logout'>Logout</Link>
+     <Link to='/profiles'>Logout</Link>
    </li>
   </ul>
 )
