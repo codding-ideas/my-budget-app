@@ -11,8 +11,10 @@
  export default function(state = initialState, action) {
    const { type, payload } = action;
 
+ 
    switch (type) {
      case 'USER_LOADED':
+        localStorage.setItem('token', ac);
        return {
          ...state,
          isAuthenticated: true,
@@ -20,7 +22,7 @@
          user: payload
        };
      case 'REGISTER_SUCCESS':
-       localStorage.setItem('token', payload.token);
+       localStorage.setItem('token', 'Emmanueldaim');
        return {
          ...state,
          ...payload,

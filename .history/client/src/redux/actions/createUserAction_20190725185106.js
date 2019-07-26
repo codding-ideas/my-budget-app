@@ -13,7 +13,7 @@ export const loadUser = () => async dispatch => {
     //If there is a token then we make our request
     try {
         
-        const res = await axios.get('/api/getMyProfile');
+        const res = await axios.get('/api/auth');
 
         //Dispatch user loaded
         dispatch({
