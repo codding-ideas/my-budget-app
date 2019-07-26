@@ -36,7 +36,7 @@ const { register, handleSubmit, errors } = useForm();
   };
 
 //REDIRECT IF AUTHENTICATED
-if(props.loginUser.isAuthenticated){
+if(props.loginUser.is){
   return(
     <Redirect to ='/dashboard'/>
   )
