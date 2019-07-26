@@ -1,32 +1,10 @@
 import axios from 'axios';
-import { setAlert } from '../actions/alertAction';
+
+import  { setAlert } from './alertAction'
 import setAuthToken from '../../utils/setAuthToken'
 
-// //Load user
-// //This function is not run yet so we have to run it from main file
-export const loadUser = () => async dispatch => {
-    //Check if there is a token, then put it in a global header
-    if(localStorage.token){
-        setAuthToken(localStorage.token)
-    }
 
-    //If there is a token then we make our request
-    try {
-        
-        const res = await axios.get('/api/getMyProfile');
 
-        //Dispatch user loaded
-        dispatch({
-            type: 'USER_LOADED',
-            payload: res.data //This is the user
-        })
-    } catch (error) {
-        dispatch({
-            type: 'AUTH_ERROR'
-        })
-    }
-
-}
 
 //Register a user
 export  const registerUser = (values) => {

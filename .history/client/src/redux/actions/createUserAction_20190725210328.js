@@ -6,9 +6,9 @@ import setAuthToken from '../../utils/setAuthToken'
 // //This function is not run yet so we have to run it from main file
 export const loadUser = () => async dispatch => {
     //Check if there is a token, then put it in a global header
-    if(localStorage.token){
-        setAuthToken(localStorage.token)
-    }
+    // if(localStorage.token){
+    //     setAuthToken(localStorage.token)
+    // }
 
     //If there is a token then we make our request
     try {

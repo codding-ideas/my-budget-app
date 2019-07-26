@@ -26,9 +26,9 @@ const  App = ()  => {
 
   
 //useffect
-useEffect(() => {
-  store.dispatch(loadUser()) //Load user function is not an action creator so we can call it as this
-}, [])
+// useEffect(() => {
+//   store.dispatch(loadUser()) //Load user function is not an action creator so we can call it as this
+// }, [])
 
   return (
     <Provider store = {store}>

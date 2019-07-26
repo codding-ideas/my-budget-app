@@ -7,7 +7,7 @@
 // //We will add a global header to axios so we need to import it
 
 
-const setAuthToken = token => {
+const setAuthToken = (token) => {
     //Check if there is a token
     //The token we pass in will come from the local storage
 
@@ -17,6 +17,20 @@ const setAuthToken = token => {
       } else {
         delete axios.defaults.headers.common['x-auth-token'];
       }
+}
+
+
+const setAuthToken = () => {
+
+  //Check if there is a token
+    //The token we pass in will come from the local storage
+
+    if (token) {
+      axios.defaults.headers.common['x-auth-token'] = token;
+      //The token here is the token from the localstorage
+    } else {
+      delete axios.defaults.headers.common['x-auth-token'];
+    }
 }
 
 export default setAuthToken;
