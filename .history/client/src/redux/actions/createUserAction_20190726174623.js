@@ -68,21 +68,21 @@ export  const registerUser = (values) => {
    
      //LOGIN
 
-export const login = (values) => async dispatch => {
+export const login = ( email, password) => async dispatch => {
     const config  = {
         headers: {
             'Content-Type': 'application/json'
         }
     }
  
-    const body = JSON.stringify(values)
+    const body = JSON.stringify({email, password})
  
     try {
-        const res = await axios.post('/api/user/login', body, config)
+        const res = await axios.post('/api/auth', body, config)
  
         //If everything was ok, then we dispatch register success
         dispatch({
-            type: 'LOGIN_SUCCESS',
+            type:LOGIN_SUCCESS,
             payload: res.data //All what is coming from this route is a token
         })
         //Loading the user after loging in
@@ -100,7 +100,7 @@ export const login = (values) => async dispatch => {
          errors.forEach(error => dispatch(setAlert(error.msg, 'danger')))
      }
         dispatch({
-            type: 'LOGIN_FAIL'
+            type: LOGIN_FAIL
         })
     }
  }

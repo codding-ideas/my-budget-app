@@ -20,7 +20,7 @@
          user: payload
        };
      case 'REGISTER_SUCCESS':
-       case 'LOGIN_SUCCESS':
+       case 
        localStorage.setItem('token', payload.token);
        return {
          ...state,

@@ -10,7 +10,7 @@ const config = require('config');
 
 
 //LOGIN
-loginAuth.post('/', [
+lo.post('/', [
 check('email', 'Email is required').isEmail(),
 check('password', 'Password is required').exists()
 ], async (req, res) => {

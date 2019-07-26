@@ -6,7 +6,7 @@ const authRouter = require('./routes/api/users');
 const incomeRoute = require('./routes/api/income');
 const getMyProfileAuth = require('./routes/api/authRoutes/getMyProfileAuth')
 const postRoute = require('./routes/api/post');
-const loginAuth = require('./routes/api/authRoutes/loginAuth')
+const login = require('')
 const mongodbConnect = require('./config/db');
 const path = require('path');
 const app = express();
@@ -40,8 +40,7 @@ app.use(cors())
 app.use('/api/users', authRouter);
 app.use('/api/income', incomeRoute);
 app.use('/api/post', postRoute);
-app.use('/api/getMyProfile', getMyProfileAuth);
-app.use('/api/user/login', loginAuth)
+app.use('/api/getMyProfile', getMyProfileAuth)
 
 
 

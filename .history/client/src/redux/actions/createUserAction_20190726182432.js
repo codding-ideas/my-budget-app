@@ -68,14 +68,14 @@ export  const registerUser = (values) => {
    
      //LOGIN
 
-export const login = (values) => async dispatch => {
+export const login = ( email, password) => async dispatch => {
     const config  = {
         headers: {
             'Content-Type': 'application/json'
         }
     }
  
-    const body = JSON.stringify(values)
+    const body = JSON.stringify({email, password})
  
     try {
         const res = await axios.post('/api/user/login', body, config)
@@ -100,7 +100,7 @@ export const login = (values) => async dispatch => {
          errors.forEach(error => dispatch(setAlert(error.msg, 'danger')))
      }
         dispatch({
-            type: 'LOGIN_FAIL'
+            type: LOGIN_FAIL
         })
     }
  }
