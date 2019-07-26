@@ -57,11 +57,11 @@ const guestLinks = (
    </li>
 
    <li>
-     <Link to='/profiles'>Register</Link>
+     <Link to='/profiles'>Dashboard</Link>
    </li>
 
    <li>
-     <Link to='/profiles'>Login</Link>
+     <Link to='/profiles'>Logout</Link>
    </li>
   </ul>
 )
@@ -74,7 +74,7 @@ return (
          </Link>
        </h1>
 
-       {!props.navLogin.loading && props.navLogin.isAuthenticated ? authLinks: guestLinks}
+       {guestLinks}
   </nav>
 )
 }

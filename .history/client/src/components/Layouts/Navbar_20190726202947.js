@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 
 const Navbar = (props) => {
-  console.log('Props from Navbar', props.navLogin)
+  console.log('Props from Navbar', props)
 //  return (
 //   <div className = 'navbar bg-dark'>
 //    <h1>
@@ -36,32 +36,11 @@ const Navbar = (props) => {
 const authLinks = (
   <ul>
    <li>
-     <Link to='/account'>My Account</Link>
+     <Link to='/profiles'>Profile</Link>
    </li>
 
    <li>
      <Link to='/profiles'>Dashboard</Link>
-   </li>
-
-   <li>
-     <Link to='/profiles'>Logout</Link>
-   </li>
-  </ul>
-)
-
-//GUEST NAVBAR
-const guestLinks = (
-  <ul>
-   <li>
-     <Link to='/account'>Home</Link>
-   </li>
-
-   <li>
-     <Link to='/profiles'>Register</Link>
-   </li>
-
-   <li>
-     <Link to='/profiles'>Login</Link>
    </li>
   </ul>
 )
@@ -74,7 +53,7 @@ return (
          </Link>
        </h1>
 
-       {!props.navLogin.loading && props.navLogin.isAuthenticated ? authLinks: guestLinks}
+       {authLinks}
   </nav>
 )
 }

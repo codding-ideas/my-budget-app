@@ -74,7 +74,7 @@ return (
          </Link>
        </h1>
 
-       {!props.navLogin.loading && props.navLogin.isAuthenticated ? authLinks: guestLinks}
+       {!props.navLogin. && props.navLogin.isAuthenticated ? authLinks: guestLinks}
   </nav>
 )
 }

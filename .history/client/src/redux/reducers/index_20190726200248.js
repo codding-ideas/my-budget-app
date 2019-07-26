@@ -9,4 +9,3 @@ export default combineReducers({
   alerts,
   auth //This contains the token, user, and others
 });
- 
