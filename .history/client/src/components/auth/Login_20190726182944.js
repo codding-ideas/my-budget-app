@@ -5,7 +5,7 @@ import { Link} from 'react-router-dom'
 import  {login} from '../../redux/actions/createUserAction';
 
 
- const Login = (props) => {
+ const UsersRegistration = (props) => {
   //STATE
    const [ formData, setFormData ] = useState({
        email: '',
@@ -79,4 +79,4 @@ const mapStateToProps = (state) => {
   }
 }
 
- export default connect(mapStateToProps,  {login}) (Login)
+ export default connect(mapStateToProps,  {login}) (UsersRegistration)

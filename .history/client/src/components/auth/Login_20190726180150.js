@@ -2,10 +2,10 @@ import React, { useState} from 'react'
 import { connect } from 'react-redux';
 import  useForm from 'react-hook-form';
 import { Link} from 'react-router-dom'
-import  {login} from '../../redux/actions/createUserAction';
+import  {loginAuth} from '../../redux/actions/createUserAction';
 
 
- const Login = (props) => {
+ const UsersRegistration = (props) => {
   //STATE
    const [ formData, setFormData ] = useState({
        email: '',
@@ -28,7 +28,7 @@ import  {login} from '../../redux/actions/createUserAction';
   const onFormSubmit = e => {
   
 //Calling the action creator
-    props.login(formData)
+    props.createUsers(formData)
   };
 
 //BUILT IN FUNCTIONS FROM HOOK FORMS
@@ -79,4 +79,4 @@ const mapStateToProps = (state) => {
   }
 }
 
- export default connect(mapStateToProps,  {login}) (Login)
+ export default connect(mapStateToProps,  {lo}) (UsersRegistration)
