@@ -8,7 +8,7 @@ import Alert from './components/pages/Alert';
 import Dashboard from './components/pages/Dashboard'
 import MyAccount from './components/pages/MyAccount';
 import Logout from './components/pages/Logout';
-import PrivateRoute from './components/ProtectedRoutes/PrivateRoute'
+import PrivateRoute from './components/'
 
 
 import './App.css';
@@ -48,7 +48,7 @@ useEffect(() => {
               <Route exact path = '/register' component = {Register}/>
               <Route exact path = '/login' component = {Login}/>
 
-              <PrivateRoute exact path = '/dashboard' component = {Dashboard}/>
+              <Route exact path = '/dashboard' component = {Dashboard}/>
 
               
               <Route exact path = '/logout' component = {Logout}/>

@@ -48,7 +48,7 @@ useEffect(() => {
               <Route exact path = '/register' component = {Register}/>
               <Route exact path = '/login' component = {Login}/>
 
-              <PrivateRoute exact path = '/dashboard' component = {Dashboard}/>
+              <Route exact path = '/dashboard' component = {Dashboard}/>
 
               
               <Route exact path = '/logout' component = {Logout}/>
