@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../../redux/actions/createUserAction'
 
@@ -45,14 +45,12 @@ const authLinks = (
    </li>
 
    <li>
-     <a onClick = {props.logout} href = '#'>
+     <a onClick = {logout} href = '#'>
      <span className='hide-sm'>Logout</span>
      </a>
    </li>
   </ul>
 )
-
-
 
 //GUEST NAVBAR
 const guestLinks = (
@@ -70,8 +68,6 @@ const guestLinks = (
    </li>
   </ul>
 )
-
-
 
 return (
   <nav className='navbar bg-dark'>

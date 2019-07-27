@@ -30,7 +30,7 @@
        };
      case 'REGISTER_FAIL':
      case 'AUTH_ERROR':
-      case 'LOGOUT':
+       ca
 
        localStorage.removeItem('token');
        return {
