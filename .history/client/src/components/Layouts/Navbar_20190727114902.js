@@ -45,7 +45,7 @@ const authLinks = (
    </li>
 
    <li>
-     <a onClick = {props.logout} href = '/'>
+     <a onClick = {props.logout} href = '#'>
      <span className='hide-sm'>Logout</span>
      </a>
    </li>

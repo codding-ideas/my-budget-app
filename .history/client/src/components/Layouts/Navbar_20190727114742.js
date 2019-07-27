@@ -45,7 +45,7 @@ const authLinks = (
    </li>
 
    <li>
-     <a onClick = {props.logout} href = '/'>
+     <a onClick = {props.logout} href = '#'>
      <span className='hide-sm'>Logout</span>
      </a>
    </li>
@@ -71,9 +71,9 @@ const guestLinks = (
   </ul>
 )
 
-// if(!props.navLogin.isAuthenticated){
-//  return( <Redirect to ='/'/>)
-// }
+if(!props.navLogin.isAuthenticated){
+ return <Redirect to ='/'/>
+}
 
 return (
   <nav className='navbar bg-dark'>
