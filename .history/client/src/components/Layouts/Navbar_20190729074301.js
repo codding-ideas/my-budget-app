@@ -11,7 +11,8 @@ const Navbar = (props) => {
 
 const authLinks = (
   <ul>
-  
+   
+
    <li>
      <Link to='/dashboard'>Dashboard</Link>
    </li>

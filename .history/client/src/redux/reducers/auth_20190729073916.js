@@ -12,7 +12,7 @@
 
    switch (type) {
        case 'LOGIN_SUCCESS':
-          case 'REGISTER_SUCCESS':
+         
        localStorage.setItem('token', payload.token);
        return {
          ...state,
