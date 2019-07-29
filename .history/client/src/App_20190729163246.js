@@ -51,7 +51,7 @@ const  App = ()  => {
               <Route exact path = '/account' component = {MyAccount}/>
 
 
-              <Route exact path = '/addincome' component = {AddIncome}/>
+              <Route exact path = '/addincome' component = {MyAccount}/>
             </Switch>
         </section>
       </div>

@@ -13,7 +13,7 @@ import setAuthToken from './utils/setAuthToken';
 import {getMyProfile } from './redux/actions/auth';
 
 //Income
-import AddIncome from './components/forms/addIncome'
+import AddIncome from ''
 import './App.css';
 
 
@@ -49,9 +49,6 @@ const  App = ()  => {
               <Route exact path = '/logout' component = {Logout}/>
 
               <Route exact path = '/account' component = {MyAccount}/>
-
-
-              <Route exact path = '/addincome' component = {AddIncome}/>
             </Switch>
         </section>
       </div>

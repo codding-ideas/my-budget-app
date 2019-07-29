@@ -49,9 +49,6 @@ const  App = ()  => {
               <Route exact path = '/logout' component = {Logout}/>
 
               <Route exact path = '/account' component = {MyAccount}/>
-
-
-              <Route exact path = '/addincome' component = {AddIncome}/>
             </Switch>
         </section>
       </div>

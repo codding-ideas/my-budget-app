@@ -12,6 +12,7 @@ const { check, validationResult} = require('express-validator')
 
 
 //REGISTER
+
 usersRouter.post('/', [check('name', 'Name is require').not().isEmpty(),
 check('email', 'Email is required').isEmail(),
 check('password', 'Password is required with minimum length of 4').isLength({min: 4})

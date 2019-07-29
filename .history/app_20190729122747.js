@@ -15,7 +15,7 @@ const cors = require('cors');
 
 
 // //Connect to DB
- //mongodbConnect()
+ mongodbConnect()
 
 mongoose.connect('mongodb://localhost/My-Budget-App', {
         useNewUrlParser: true,
@@ -38,6 +38,7 @@ app.use(cors())
 
 //SERVING ROUTES
 app.use('/api/users', authRouter);
+app.use('/api/income', incomeRoute);
 app.use('/api/post', postRoute);
 app.use('/api/getMyProfile', getMyProfileAuth);
 app.use('/api/user/login', loginAuth)
