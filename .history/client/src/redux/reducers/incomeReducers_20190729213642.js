@@ -1,0 +1,5 @@
+
+const initialState = {
+ description: '',
+ amount: 
+}

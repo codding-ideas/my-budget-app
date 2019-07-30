@@ -3,7 +3,9 @@
  const initialState = {
    token: localStorage.getItem('token'),
    isAuthenticated: false,
-   user: null,
+   userCreated: null,
+   loginUser: null,
+   allUsers: [],
    loading: true
  };
  
@@ -12,14 +14,21 @@
 
    switch (type) {
        case 'LOGIN_SUCCESS':
-          case 'REGISTER_SUCCESS':
-       localStorage.setItem('token', payload.token);
+          localStorage.setItem('token', payload.token);
+         return {
+           ...state,
+            to
+         }
+       case 'REGISTER_SUCCESS':
+       
        return {
          ...state,
-         user:payload,
+         userCreated:payload,
+         allUsers: payload,
          isAuthenticated: true,
          loading: false
        };
+       
        case 'USER_LOADED':
          return{
            ...state,
