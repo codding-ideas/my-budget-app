@@ -16,7 +16,7 @@ import setAuthToken from '../../utils/setAuthToken'
       props.getMyProfile()
    }, [])
 
-console.log('DASHBOARD', props.auth.loginUser)
+console.log('DASHBOARD', props.auth.localStorage)
    return (
         
          <div>
@@ -43,13 +43,7 @@ console.log('DASHBOARD', props.auth.loginUser)
                 <input type='text'/>
              </form>
           </div>
-          {props.auth.loginUser ? <div>
-           {props.auth.loginUser.income.map((income) => {
-              return <div>
-                 <h1>{income}</h1>
-              </div>
-           })}
-          </div> : 'No' }
+          {}
       </div>
    )
 }

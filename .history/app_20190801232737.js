@@ -41,7 +41,7 @@ app.use('/api/users', authRouter);
 app.use('/api/post', postRoute);
 app.use('/api/getMyProfile', getMyProfileAuth);
 app.use('/api/user/login', loginAuth);
-app.use('/api', incomeRoute)
+app.use('/api/', incomeRoute)
 
 
 

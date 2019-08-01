@@ -45,9 +45,7 @@ console.log('DASHBOARD', props.auth.loginUser)
           </div>
           {props.auth.loginUser ? <div>
            {props.auth.loginUser.income.map((income) => {
-              return <div>
-                 <h1>{income}</h1>
-              </div>
+              return 
            })}
           </div> : 'No' }
       </div>

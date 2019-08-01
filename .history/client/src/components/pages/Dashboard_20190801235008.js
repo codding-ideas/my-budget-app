@@ -43,13 +43,11 @@ console.log('DASHBOARD', props.auth.loginUser)
                 <input type='text'/>
              </form>
           </div>
-          {props.auth.loginUser ? <div>
-           {props.auth.loginUser.income.map((income) => {
-              return <div>
-                 <h1>{income}</h1>
-              </div>
-           })}
-          </div> : 'No' }
+          {props.auth.loginUser.map((income) => {
+             return <div>
+                <h1></h1>
+             </div>
+          })}
       </div>
    )
 }

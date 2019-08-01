@@ -92,22 +92,7 @@ incomeRouter.post('/income',  async (req, res) => {
 })
 
 
-//FETCH ALL POST BY USER
-
-incomeRouter.get('/income', (req, res) => {
-      User.findOne({email: "e.tweneboah1@gmail.com"}).populate("income").exec(function(err, user){
-    if(err){
-        console.log('No income for this user');
-    } else {
-          res.json({
-                user: user
-          })
-        console.log(user);
-    }
-});
-
-})
-
+//FETCH
 
 //FETCH ALL USERS BASE ON USERS
 // incomeRouter.get('/me', auth,  async (req, res) => {
