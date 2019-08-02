@@ -83,39 +83,20 @@ usersRouter.delete('/', auth,  async (req, res) => {
 })
 
 //===============
-// Fetch all users and populate it income base on a specific user
+// Fetch all users and populate it income
 //===================================
 
-usersRouter.get('/', auth, async (req, res) => {
-   console.log('INCOME WITH USERS', req.user.id)
-   try {
-         await User.findById(req.user.id).populate('income').exec((err, userWithIncome) => {
-            res.json({
-               userWithIncome
-            })
-         })
-   } catch (error) {
+// usersRouter.get('/',  auth,  async (req, res) => {
+//    try {
+//          await User.find().populate('income').exec((err, userWithIncome) => {
+//             res.json({
+//                userWithIncome
+//             })
+//          })
+//    } catch (error) {
      
-   }
-})
-
-
-//===============
-// Fetch all users and populate it income base on a specific user
-//===================================
-
-usersRouter.get('/allIncome', auth, async (req, res) => {
-   console.log('INCOME WITH USERS', req.user.id)
-   try {
-         await User.findOne().populate('income').exec((err, userWithIncome) => {
-            res.json({
-               userWithIncome
-            })
-         })
-   } catch (error) {
-     
-   }
-})
+//    }
+// })
 
 
 //================
@@ -205,6 +186,22 @@ usersRouter.post('/login', [
        }
    
    })
+
+
+   //============
+   //GET MY PROFILE
+   //============
+
+
+   usersRouter.get('/', async (req, res) => {
+      try {
+             const user = await User.findById(req.user.id);
+            res.json(user)
+      } catch (error) {
+         console.log(error.message);
+         res.status(500).send('server error')
+      }
+});
 
 
 module.exports = usersRouter;

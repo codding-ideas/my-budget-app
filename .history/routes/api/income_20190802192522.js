@@ -7,18 +7,42 @@ const Income = require('../../models/Income')
 
 
 
+//CREATE AN INCOME BASE ON A USER
+
+// incomeRouter.post('/create',  async (req, res) => {
+
+//       //We want to associate the user who has login to create the post so we can build an object to include the user in token so that we can create a data base on that user
+
+//       const incomeAmountFields = {
+//             user: req.user.id,
+//             incomeAmount: req.body.incomeAmount,
+//             description: req.body.description
+//       }
+
+//       try {
+            
+//             const income = new Income(incomeAmountFields);
+
+//             await income.save();
+//             res.json(income)
+//       } catch (error) {
+            
+//       }
+// })
+
+
 
 // CREATE INCOME FOR A SPECIFIC USER
-incomeRouter.post('/income', auth, async (req, res) => {
+incomeRouter.post('/income',  async (req, res) => {
 
   
     try {
 
      Income.create({
-           description: "Express",
-           amount: '9000'
+           description: "This is my Description",
+           amount: '3000'
      }, function(err, income) {
-           User.findById(req.user.id , function(err, foundUser){
+           User.findOne({email: 'e.tweneboah1@gmail.com'}, function(err, foundUser){
                  if(err){
                        console.log(err)
                  }else {

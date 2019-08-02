@@ -8,17 +8,18 @@ const Income = require('../../models/Income')
 
 
 
+
 // CREATE INCOME FOR A SPECIFIC USER
-incomeRouter.post('/income', auth, async (req, res) => {
+incomeRouter.post('/income',  async (req, res) => {
 
   
     try {
 
      Income.create({
-           description: "Express",
-           amount: '9000'
+           description: "This is my Description",
+           amount: '3000'
      }, function(err, income) {
-           User.findById(req.user.id , function(err, foundUser){
+           User.findOne({email: 'emma@gmail.com'}, function(err, foundUser){
                  if(err){
                        console.log(err)
                  }else {

@@ -2,11 +2,12 @@ const express = require('express');
 const auth = require('../../../middleware/auth');
 const getMyProfileAuth = express.Router();
 const User = require('../../../models/User')
+const { check, validationResult} = require('express-validator');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const config = require('config');
 
-//============
-// Get my Profile and populate income created
-//=========================
-
+//zReturn my profile
 
 getMyProfileAuth.get('/', auth, async (req, res) => {
       try {

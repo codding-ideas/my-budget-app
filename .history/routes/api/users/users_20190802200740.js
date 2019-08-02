@@ -207,4 +207,20 @@ usersRouter.post('/login', [
    })
 
 
+   //============
+   //GET MY PROFILE
+   //============
+
+
+   usersRouter.get('/', auth, async (req, res) => {
+      try {
+             const user = await User.findById(req.user.id).populate;
+            res.json(user)
+      } catch (error) {
+         console.log(error.message);
+         res.status(500).send('server error')
+      }
+});
+
+
 module.exports = usersRouter;

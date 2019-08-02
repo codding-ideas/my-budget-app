@@ -2,6 +2,10 @@ const express = require('express');
 const auth = require('../../../middleware/auth');
 const getMyProfileAuth = express.Router();
 const User = require('../../../models/User')
+const { check, validationResult} = require('express-validator');
+
+
+
 
 //============
 // Get my Profile and populate income created

@@ -207,4 +207,22 @@ usersRouter.post('/login', [
    })
 
 
+   //============
+   //GET MY PROFILE
+   //============
+
+
+   usersRouter.get('/', auth, async (req, res) => {
+      try {
+            // await User.findOne({email: "emmga@gmail.com"}).populate('income').exec((err, userss) => {
+            //    res.json(userss)
+            //  });
+           
+      } catch (error) {
+         console.log(error.message);
+         res.status(500).send('server error')
+      }
+});
+
+
 module.exports = usersRouter;

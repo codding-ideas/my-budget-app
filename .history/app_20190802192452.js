@@ -39,7 +39,7 @@ app.use(cors())
 
 app.use('/api/users', usersRouter);
 app.use('/api/me', getMyProfileAuth);
-app.use('/api/users', incomeRoute);
+app.use('/api/', incomeRoute);
 
 
 

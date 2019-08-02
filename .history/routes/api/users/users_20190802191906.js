@@ -67,6 +67,18 @@ const { check, validationResult} = require('express-validator')
 
    })
 
+//======================
+//GET ALL USERS
+//====================
+
+usersRouter.get('/', async(req, res) => {
+  try {
+      const allUsers = await User.find();
+      res.json(allUsers)
+  } catch (error) {
+    
+  }
+})
 
 //================
 //DELETE USER
@@ -82,46 +94,16 @@ usersRouter.delete('/', auth,  async (req, res) => {
    }
 })
 
-//===============
-// Fetch all users and populate it income base on a specific user
-//===================================
 
-usersRouter.get('/', auth, async (req, res) => {
-   console.log('INCOME WITH USERS', req.user.id)
+usersRouter.get('/',   async (req, res) => {
    try {
-         await User.findById(req.user.id).populate('income').exec((err, userWithIncome) => {
-            res.json({
-               userWithIncome
-            })
-         })
+         const allUsers = User.find()
    } catch (error) {
      
    }
 })
 
-
-//===============
-// Fetch all users and populate it income base on a specific user
-//===================================
-
-usersRouter.get('/allIncome', auth, async (req, res) => {
-   console.log('INCOME WITH USERS', req.user.id)
-   try {
-         await User.findOne().populate('income').exec((err, userWithIncome) => {
-            res.json({
-               userWithIncome
-            })
-         })
-   } catch (error) {
-     
-   }
-})
-
-
-//================
 //Show more info
-//================
-
 usersRouter.get('/:id', async (req, res) => {
   
    try {
@@ -205,6 +187,22 @@ usersRouter.post('/login', [
        }
    
    })
+
+
+   //============
+   //GET MY PROFILE
+   //============
+
+
+   usersRouter.get('/', auth, async (req, res) => {
+      try {
+             const user = await User.findById(req.user.id);
+            res.json(user)
+      } catch (error) {
+         console.log(error.message);
+         res.status(500).send('server error')
+      }
+});
 
 
 module.exports = usersRouter;
