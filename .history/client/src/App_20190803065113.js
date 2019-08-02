@@ -46,7 +46,7 @@ const  App = (props)  => {
               <Route exact path = '/register' component = {Register}/>
               <Route exact path = '/login' component = {Login}/>
 
-              <Route exact path = '/dashboard' component = {Dashboard}/>
+              <Rou exact path = '/dashboard' component = {Dashboard}/>
 
               
               <Route exact path = '/logout' component = {Logout}/>

@@ -62,40 +62,6 @@ const Navbar = (props) => {
 //        {props.auth.isAuthenticated ? authLinks: guestLinks}
 //   </nav>
 // )
-
-
-
-return (
-  <nav className ='navbar '>
-      <ul>
-    <li>
-      <Link to='/'>Home</Link>
-    </li>
-
-    <li>
-      <Link to='/register'>Register</Link>
-    </li>
-
-    <li>
-      <Link to='/login'>Login</Link>
-    </li>
-
-    <li>
-//      <Link to='/dashboard'>Dashboard</Link>
-//    </li>
-
-//    <li>
-//      <Link to='/users'>Users</Link>
-//    </li>
-
-    <li>
-      <a onClick = {props.logout} href = '/'>
-      <span className='hide-sm'>Logout</span>
-      </a>
-    </li>
-   </ul>
-  </nav>
-)
 }
 
 const mapStateToProps = (state) => {

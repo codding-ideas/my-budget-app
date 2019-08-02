@@ -88,8 +88,8 @@ return (
 //      <Link to='/users'>Users</Link>
 //    </li>
 
-    <li>
-      <a onClick = {props.logout} href = '/'>
+//    <li>
+//      <a onClick = {props.logout} href = '/'>
       <span className='hide-sm'>Logout</span>
       </a>
     </li>

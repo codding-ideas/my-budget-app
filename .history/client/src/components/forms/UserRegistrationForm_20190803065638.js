@@ -137,7 +137,7 @@ const {handleSubmit, reset, errors } = useForm();
 
 const mapStateToProps = (state) => { 
   return {
-    auth: state
+    auth: state.user
   }
 }
 

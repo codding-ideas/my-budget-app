@@ -66,7 +66,7 @@ const Navbar = (props) => {
 
 
 return (
-  <nav className ='navbar '>
+  <nav>
       <ul>
     <li>
       <Link to='/'>Home</Link>
@@ -76,24 +76,10 @@ return (
       <Link to='/register'>Register</Link>
     </li>
 
-    <li>
-      <Link to='/login'>Login</Link>
-    </li>
-
-    <li>
-//      <Link to='/dashboard'>Dashboard</Link>
-//    </li>
-
 //    <li>
-//      <Link to='/users'>Users</Link>
+//      <Link to='/login'>Login</Link>
 //    </li>
-
-    <li>
-      <a onClick = {props.logout} href = '/'>
-      <span className='hide-sm'>Logout</span>
-      </a>
-    </li>
-   </ul>
+//   </ul>
   </nav>
 )
 }

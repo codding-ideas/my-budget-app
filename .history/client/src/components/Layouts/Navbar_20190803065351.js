@@ -66,34 +66,20 @@ const Navbar = (props) => {
 
 
 return (
-  <nav className ='navbar '>
+  <nav>
       <ul>
     <li>
-      <Link to='/'>Home</Link>
-    </li>
-
-    <li>
-      <Link to='/register'>Register</Link>
-    </li>
-
-    <li>
-      <Link to='/login'>Login</Link>
-    </li>
-
-    <li>
-//      <Link to='/dashboard'>Dashboard</Link>
+//      <Link to='/'>Home</Link>
 //    </li>
 
 //    <li>
-//      <Link to='/users'>Users</Link>
+//      <Link to='/register'>Register</Link>
 //    </li>
 
-    <li>
-      <a onClick = {props.logout} href = '/'>
-      <span className='hide-sm'>Logout</span>
-      </a>
-    </li>
-   </ul>
+//    <li>
+//      <Link to='/login'>Login</Link>
+//    </li>
+//   </ul>
   </nav>
 )
 }

@@ -65,37 +65,7 @@ const Navbar = (props) => {
 
 
 
-return (
-  <nav className ='navbar '>
-      <ul>
-    <li>
-      <Link to='/'>Home</Link>
-    </li>
-
-    <li>
-      <Link to='/register'>Register</Link>
-    </li>
-
-    <li>
-      <Link to='/login'>Login</Link>
-    </li>
-
-    <li>
-//      <Link to='/dashboard'>Dashboard</Link>
-//    </li>
-
-//    <li>
-//      <Link to='/users'>Users</Link>
-//    </li>
-
-    <li>
-      <a onClick = {props.logout} href = '/'>
-      <span className='hide-sm'>Logout</span>
-      </a>
-    </li>
-   </ul>
-  </nav>
-)
+return ()
 }
 
 const mapStateToProps = (state) => {

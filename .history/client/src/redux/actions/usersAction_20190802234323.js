@@ -19,7 +19,7 @@ export const getMyProfile = () => async dispatch => {
         //Dispatch user loaded
         dispatch({
             type: 'USER_LOADED',
-            payload: res.data //This is the user
+            payloa  d: res.data //This is the user
         })
     } catch (error) {
         dispatch({
@@ -72,7 +72,6 @@ export  const registerUser = (values) => {
      //==========
      // Create Income
      //=========
-
 
 export  const createIncome = (values) => {
     
