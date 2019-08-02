@@ -16,12 +16,12 @@ const cors = require('cors');
 // //Connect to DB
  mongodbConnect()
 
-// mongoose.connect('mongodb://localhost/My-Budget-App', {
-//         useNewUrlParser: true,
-//         useCreateIndex: true,
-//         useFindAndModify: false
-//     })
-//     .then(() => console.log("DB Connected successfully"));
+mongoose.connect('mongodb://localhost/My-Budget-App', {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+    })
+    .then(() => console.log("DB Connected successfully"));
 
 
 
