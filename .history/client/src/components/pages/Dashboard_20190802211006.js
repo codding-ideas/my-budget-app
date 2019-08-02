@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getMyProfile } from '../../redux/actions/usersAction';
 import Spinner from '../../components/Layouts/Spinner'
 import setAuthToken from '../../utils/setAuthToken'
-import AddIncome from '../../components/forms/AddIncomeForm'
+
 
 
     if(localStorage.token){
@@ -16,7 +16,7 @@ import AddIncome from '../../components/forms/AddIncomeForm'
       props.getMyProfile()
    }, [])
 
-console.log('DASHBOARD', props.auth.loginUser.income)
+console.log('DASHBOARD', props.auth.loginUser.in)
    return (
         
          <div>
@@ -42,25 +42,6 @@ console.log('DASHBOARD', props.auth.loginUser.income)
              <form>
                 <input type='text'/>
              </form>
-          </div>
-
-          <div>
-             
-             <h1>Income History</h1>
-             <hr/>
-             {props.auth.loginUser.income ? <div>
-               {props.auth.loginUser.income.map((income) => {
-                  return (
-                     <div key ={income.id}>
-                        <p>{income.description} - {income.amount}</p> 
-                     </div>
-                  )
-               })}
-             </div> : ''}
-
-              <div>
-                 <AddIncome/>
-              </div>
           </div>
       </div>
    )

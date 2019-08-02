@@ -42,12 +42,11 @@
              showMoreUser: payload
            }
        case 'USER_LOADED':
-        case 'INCOME_CREATED':
          return{
            ...state,
            isAuthenticated: true,
            loading: false,
-           incomeCreated: payload,
+           incomeCreated: payload
            loginUser: payload
          }
       case 'AUTH_ERROR':

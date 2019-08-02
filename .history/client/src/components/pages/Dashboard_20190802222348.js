@@ -62,6 +62,8 @@ console.log('DASHBOARD', props.auth.loginUser.income)
                  <AddIncome/>
               </div>
           </div>
+
+          
       </div>
    )
 }

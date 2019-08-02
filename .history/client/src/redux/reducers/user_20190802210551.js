@@ -7,7 +7,7 @@
    showMoreUser: '',
    loginUser: '',
    allUsers: [],
-   incomeCreated: [],
+   incomeCreated: []
    loading: true
  };
  
@@ -42,12 +42,10 @@
              showMoreUser: payload
            }
        case 'USER_LOADED':
-        case 'INCOME_CREATED':
          return{
            ...state,
            isAuthenticated: true,
            loading: false,
-           incomeCreated: payload,
            loginUser: payload
          }
       case 'AUTH_ERROR':

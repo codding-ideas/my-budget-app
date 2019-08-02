@@ -69,48 +69,6 @@ export  const registerUser = (values) => {
      }
    
 
-     //==========
-     // Create Income
-     //=========
-
-export  const createIncome = (values) => {
-    
-    const config = {
-     headers: {
-      'Content-Type': 'application/json'
-      }
-    }
-   
-   //The values are the data from the form
-    const body = JSON.stringify(values)
-   
-       return function(dispatch) {
-           axios.post('/api/users/income', body, config)
-           .then((res) => {
-               return dispatch({
-                   type: 'CREATE_INCOME',
-                   payload: res.data //This endpoint returns a token as specify in the rapi
-               })
-               
-           }).catch((err) => {
-                    //ERRORS FROM THE ENDPOINT. They are in array of errors
-           const errors = err.response.data.errors //This is where the errors are located
-           //check if there are errors
-           if(errors){
-            errors.forEach((error) => {
-             dispatch(setAlert(error.msg, 'danger'))
-            })
-           }
-           dispatch({
-            type: 'REGISTER_FAIL'
-     })
-     })
-     
-       }
-       
-     }
-   
-
 
      //LOGIN
 
@@ -149,6 +107,26 @@ export const login = (values) => async dispatch => {
     }
  }
 
+
+
+
+  //GET MY PROFILE
+
+//   export  const getMyProfile = () => {
+    
+//       return function(dispatch) {
+//         axios.get('/api/getMyProfile')
+//         .then((user) => {
+//              return dispatch({
+//                  type: 'GET_MY_PROFILE',
+//                  payload: user.data   
+//              })
+//         }).catch((error) => {
+//             console.log('Fail', error)
+//           })
+//       }
+    
+//     }
 
 
 //FETCH ALL USER
@@ -195,3 +173,27 @@ export const fetchAllUsers = () => async dispatch => {
  export const logout = () => dispatch => {
     dispatch({ type: 'LOGOUT' });
   };
+
+
+
+  export const fetchAllIncome = () => async dispatch => {
+
+    //Check if there is a token, then put it in a global header
+   
+    //If there is a token then we make our request
+    try {
+        
+        const res = await axios.get('/api/user');
+   
+        //Dispatch user loaded
+        dispatch({
+            type: 'FETCH_ALL_INCOME',
+            payload: res.data //This is the user
+        })
+    } catch (error) {
+        dispatch({
+            type: 'AUTH_ERROR'
+        })
+    }
+   
+   }

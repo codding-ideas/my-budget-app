@@ -73,6 +73,7 @@ export  const registerUser = (values) => {
      // Create Income
      //=========
 
+     //Register a user
 export  const createIncome = (values) => {
     
     const config = {

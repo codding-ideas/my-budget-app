@@ -42,7 +42,7 @@ console.log('DASHBOARD', props.auth.loginUser.income)
              <form>
                 <input type='text'/>
              </form>
-          </div>
+          </div>nb
 
           <div>
              

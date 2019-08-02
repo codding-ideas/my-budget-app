@@ -6,14 +6,19 @@ const User = require('../../models/User')
 const Income = require('../../models/Income')
 
 
+
+
 // CREATE INCOME FOR A SPECIFIC USER
 incomeRouter.post('/income', auth, async (req, res) => {
 
+  
     try {
 
+      //Destructure 
+      const { amount, description } = req.b
      Income.create({
-           description: req.body.description,
-           amount: req.body.amount
+           description: "Express",
+           amount: '9000'
      }, function(err, income) {
            User.findById(req.user.id , function(err, foundUser){
                  if(err){
@@ -34,6 +39,20 @@ incomeRouter.post('/income', auth, async (req, res) => {
                  }
            })
      })
+
+
+
+
+
+     //const income = new Income({description, amount});
+//      user.income.push(income)
+//      await income.save();
+   
+//       return res.json({
+//         income: income
+//       })
+      
+
 
     } catch (error) {
        console.log(error.message)
@@ -58,5 +77,38 @@ incomeRouter.get('/income', (req, res) => {
 });
 
 })
+
+
+//FETCH ALL USERS BASE ON USERS
+// incomeRouter.get('/me', auth,  async (req, res) => {
+//       try {
+//               const allIncome =  await Income.find({user: req.user.id}).populate('user', ['name', 'email']);
+//               res.json(allIncome)
+//       } catch (error) {
+            
+//       }
+// })
+
+//FETCH ALL INCOME FROM ALL USERS
+
+// incomeRouter.get('/',  async (req, res) => {
+//       try {
+//               const allIncome =  await Income.find().populate('user', ['name', 'email']);
+//               res.json(allIncome)
+//       } catch (error) {
+            
+//       }
+// })
+
+// incomeRouter.get('/',  async (req, res) => {
+//       try {
+//               const allIncome =  await Income.find()
+//               res.json(allIncome)
+//       } catch (error) {
+            
+//       }
+// })
+
+
 
 module.exports = incomeRouter;

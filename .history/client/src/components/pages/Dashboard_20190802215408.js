@@ -42,25 +42,20 @@ console.log('DASHBOARD', props.auth.loginUser.income)
              <form>
                 <input type='text'/>
              </form>
-          </div>
+          </div>nb
 
           <div>
-             
              <h1>Income History</h1>
              <hr/>
              {props.auth.loginUser.income ? <div>
                {props.auth.loginUser.income.map((income) => {
                   return (
                      <div key ={income.id}>
-                        <p>{income.description} - {income.amount}</p> 
+                        <p>{income.description}</p><h2>{income.amount}</h2>
                      </div>
                   )
                })}
              </div> : ''}
-
-              <div>
-                 <AddIncome/>
-              </div>
           </div>
       </div>
    )

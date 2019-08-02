@@ -42,7 +42,6 @@
              showMoreUser: payload
            }
        case 'USER_LOADED':
-        case 'INCOME_CREATED':
          return{
            ...state,
            isAuthenticated: true,

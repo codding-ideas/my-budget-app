@@ -73,6 +73,7 @@ export  const registerUser = (values) => {
      // Create Income
      //=========
 
+     //Register a user
 export  const createIncome = (values) => {
     
     const config = {
@@ -88,7 +89,7 @@ export  const createIncome = (values) => {
            axios.post('/api/users/income', body, config)
            .then((res) => {
                return dispatch({
-                   type: 'CREATE_INCOME',
+                   type: 'REGISTER_SUCCESS',
                    payload: res.data //This endpoint returns a token as specify in the rapi
                })
                
