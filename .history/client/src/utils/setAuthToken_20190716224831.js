@@ -1,1 +1,0 @@
-//Functions that takes in token and if 

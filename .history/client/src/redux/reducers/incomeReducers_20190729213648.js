@@ -1,6 +1,0 @@
-
-const initialState = {
- description: '',
- amount: ''
-}
-
