@@ -5,6 +5,5 @@ import account from './account'
 
 export default combineReducers({
    alert,
-   auth,
-   account
+   auth
 });

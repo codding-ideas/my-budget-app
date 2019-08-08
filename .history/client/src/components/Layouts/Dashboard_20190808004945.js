@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
  const Dashboard = (props) => {
   
-console.log('DASH', props.account)
+console.log('DASH', props.user)
    return (
         
       <Fragment>
@@ -38,7 +38,7 @@ const mapStateToProps = (state) => {
       
     isAuthenticated: state.auth.isAuthenticated,
     user: state.auth.user,
-    account: state
+    
    }
 }
 

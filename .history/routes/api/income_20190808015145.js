@@ -14,7 +14,7 @@ incomeRouter.post('/', auth, async (req, res) => {
 
      Income.create({
            description: 'req.body.description',
-           amount: 'req.body.amount'
+           amount: req.body.amount
      }, function(err, income) {
            User.findById(req.user.id , function(err, foundUser){
                  if(err){

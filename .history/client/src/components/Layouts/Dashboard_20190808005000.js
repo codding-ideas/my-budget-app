@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
  const Dashboard = (props) => {
   
-console.log('DASH', props.account)
+console.log('DASH', props.user)
    return (
         
       <Fragment>

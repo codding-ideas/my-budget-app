@@ -21,12 +21,7 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  income : [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Income'
-    }
-  ]
+  
 });
 
 module.exports = User = mongoose.model('User', UserSchema);

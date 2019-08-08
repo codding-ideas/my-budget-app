@@ -21,10 +21,10 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  income : [
+  income: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Income'
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Income'
     }
   ]
 });

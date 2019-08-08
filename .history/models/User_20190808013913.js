@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const Income = require('../models/Income')
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -21,10 +21,10 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  income : [
+  income: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Income'
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Income'
     }
   ]
 });
